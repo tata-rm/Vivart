@@ -1,0 +1,26 @@
+:root{
+    --lilas-escuro: #2F0836;
+    --lilas-claro: #875790;
+    --lilas: #5F3467;
+    --cinza-escuro: #655D64;
+    --cinza: #D9D9D9;
+    --cor-de-fundo: #F4F1EC;
+    --mapeia: #F1E1DE;
+    --no-brasil: #D9F3E7;
+    --leituras: #ECD5E8;
+}
+
+body{
+    background-color: var(--cor-de-fundo);
+    font-family: "Berkshire Swash", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: var(--mapeia);
+};
+
+.titulos-paginas{
+    stroke: var(--cinza-escuro);
+    border: #655D64;
+}
+
