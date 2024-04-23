@@ -24,6 +24,84 @@
     background-color: var(--cor-de-fundo);
 }
 
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    background-color: var(--lilas);
+    margin: 0%;
+    padding: 0%;
+}
+
+.logo{
+    width: 18%;
+    background-color: var(--lilas);
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+#overlay{
+    width: 20%;
+    height: 100%;
+    background-color: var(--lilas);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    border-radius: 40px;
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+.logo-overlay{
+    width: 80%;
+    margin-top: 6%;
+    margin-left: 2%;
+}
+
+.perfil{
+    width: 50%;
+    margin-top: 9%;
+    margin-bottom: 5%;
+}
+
+#overlay p{
+    font-family: "Berkshire Swash", sans-serif;
+    font-size: 50px;
+    background-color: var(--lilas);
+    text-shadow: var(--lilas-escuro) -3px 10px 8px;
+}
+
+#mapeia{
+    color: var(--mapeia);  
+}
+
+#no-brasil{
+    color: var(--no-brasil);
+}
+
+#leituras{
+    color: var(--leituras);
+}
+
+header input{
+    width: 30%;
+    margin-right: 5%;
+    background-color: var(--cinza);
+    height: 3vh;
+    border-radius: 10px;
+    border: 2px var(--cinza-escuro);
+    box-shadow: var(--lilas-escuro) 5px 0 20px;
+    margin-top: 5%;
+    font-family: "Grenze", sans-serif;
+    font-size: 20px;
+}
+
 .titulo-paginas{
     display: flex;
     flex-direction: column;
@@ -52,7 +130,7 @@
     background-color: var(--cinza);
     color: var(--cinza-escuro);
     font-family: "Grenze", sans-serif;
-    border: 1px var(--cinza-escuro);
+    border: 2px var(--cinza-escuro);
     border-radius: 10px;
     font-size: 25px;
     outline: none;
@@ -128,6 +206,44 @@
 /*-----------------------------------------------------------------------*/
 
 @media screen and (max-width: 500px) {
+    header{
+        height: 10vh;
+    }
+    
+    .logo{
+        width: 30%;
+        margin-left: 2%;
+    }
+    
+    #overlay{
+        width: 35%;
+        border-radius: 20px;
+    }
+    
+    .logo-overlay{
+        width: 90%;
+        margin-top: 2vh;
+    }
+    
+    .perfil{
+        width: 80%;
+        margin-top: 15%;
+    }
+    
+    #overlay p{
+        font-size: 25px;
+        text-shadow: var(--lilas-escuro) -3px 4px 4px;
+    }
+    
+    header input{
+        width: 55%;
+        margin-right: 2%;
+        height: 30%;
+        border-radius: 6px;
+        margin-top: 3%;
+        font-size: 15px;
+    }
+
     .titulo-paginas{
         height: 25vh;
     }
