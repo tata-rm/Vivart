@@ -55,28 +55,33 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    border-radius: 40px;
+    position: fixed;
     margin: 0%;
     padding: 0%;
     
 }
 
 .logo-overlay{
-    width: 80%;
-    margin-top: 6%;
-    margin-left: 2%;
+    width: 89%;
+    margin-top: 5%;
+    margin-left: 1%;
 }
 
 .perfil{
-    width: 50%;
-    margin-top: 9%;
-    margin-bottom: 5%;
+    width: 60%;
+    margin-top: 8%;
+}
+
+#overlay a{
+    display: flex;
+    background-color: var(--lilas);
+    align-items: center;
+    justify-content: center;
 }
 
 #overlay p{
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
 }
@@ -109,7 +114,7 @@ header input{
 .titulo-paginas{
     display: flex;
     flex-direction: column;
-    height: 35vh;
+    height: 40vh;
     width: 100%;
 }
 
@@ -118,7 +123,7 @@ header input{
     text-shadow: var(--lilas) 8px 0 10px;
     -webkit-text-stroke: 0.1px var(--lilas);  
     font-family: "Berkshire Swash", serif;
-    font-size: 75px;
+    font-size: 65px;
     margin-left: 6%;
     align-items: baseline;
 }
@@ -126,7 +131,7 @@ header input{
 .titulo-paginas a{
     color: var(--cinza-escuro);
     font-family: "Grenze", sans-serif;
-    font-size: 23px;
+    font-size: 22px;
     margin-left: 3%;
 }
 
@@ -136,7 +141,7 @@ header input{
     font-family: "Grenze", sans-serif;
     border: 2px var(--cinza-escuro);
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 20px;
     outline: none;
     cursor: pointer;
     margin-left: 2%;
@@ -214,7 +219,7 @@ header input{
         height: 10vh;
     }
     
-    .logo{
+    #logo{
         width: 30%;
         margin-left: 2%;
     }
@@ -235,7 +240,7 @@ header input{
     }
     
     #overlay p{
-        font-size: 25px;
+        font-size: 30px;
         text-shadow: var(--lilas-escuro) -3px 4px 4px;
     }
     
@@ -249,7 +254,7 @@ header input{
     }
 
     .titulo-paginas{
-        height: 25vh;
+        height: 20vh;
     }
     
     .titulo-paginas h1{
