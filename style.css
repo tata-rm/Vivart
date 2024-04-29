@@ -41,6 +41,7 @@ header{
     background-color: var(--lilas);
     margin-top: 1%;
     margin-left: 1%;
+    cursor: pointer;
 }
 
 .hidden{
@@ -70,6 +71,7 @@ header{
 .perfil{
     width: 60%;
     margin-top: 8%;
+    cursor: pointer;
 }
 
 #overlay a{

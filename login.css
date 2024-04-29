@@ -25,6 +25,7 @@ header{
     justify-content: center;
     flex-direction: column;
     margin-top: 2%;
+    height: 30%;
 }
 
 header img{
@@ -32,12 +33,24 @@ header img{
     margin-right: 3%;
 }
 
-.p{
+.menu{
+    height: 90vh;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+}
+
+#p{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20vh;
+    margin-bottom: 5vh;
+    align-items: center;
     font-family: "Grenze", sans-serif;
     color: var(--lilas);
     font-size: 20px;
-    justify-content: center;
-    margin: 3% 39% 0 41%;
+    
 }
 
 .main{
@@ -46,13 +59,13 @@ header img{
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 75%;
+    height: 45%;
     z-index: 0;
-    position: absolute;
 }
 
 #opções{
     width: 35%;
+    height: 32vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -77,6 +90,7 @@ header img{
     font-family: "Grenze", sans-serif;
     background-color: var(--fundo-opções);
     margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 30px;
 }
 
@@ -94,7 +108,7 @@ header img{
 
 .cadastro-oportunizado{
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     width: 100%;
     height: 100%;
     background-color: var(--cor-de-fundo);
@@ -112,7 +126,7 @@ header img{
     font-family: "Grenze", sans-serif;
     color: var(--lilas);
     font-size: 20px;
-    border: NONE;
+    border: none;
 }
 
 .section input{
@@ -125,15 +139,13 @@ header img{
     border-radius: 3px 3px 0px  0px;
     margin-bottom: 15px;
     outline: none;
+    font-family: "Grenze", sans-serif;
+    color: var(--lilas);
+    font-size: 20px;
 }
 
 input[type="date" i] {
     padding: 10px;
-}
-
-label{
-    display: inline-block;
-    margin-top: 13px;
 }
 
 .section button{
@@ -149,9 +161,21 @@ label{
     border-radius: 5px;
     background-color: var(--fundo-opções);
     border: 1px solid var(--lilas);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
+    
+    #p{
+        height: 20vh;        
+    }
+    
+    .main{
+        width: 100%;
+        height: 65vh;
+        justify-content: space-evenly;
+    }
+    
     header{
         margin-top: 10%;
     }
@@ -161,16 +185,17 @@ label{
         margin-right: 3%;
     }
     
-    .p{
-        font-size: 18px;
-        margin: 10% 15% 0 20%;
+    #p{
+        height: 10vh;
+        margin-top: 2vh;
     }
     
     .main{
         flex-direction: column;
-        justify-content: space-evenly;
         align-items: center;
+        justify-content: space-evenly;
         height: 75%;
+        margin-top: 0;
     }
     
     #opções{
