@@ -28,9 +28,12 @@ header{
     height: 30%;
 }
 
-header img{
+header a{
     width: 20%;
-    margin-right: 3%;
+}
+
+header img{
+    width: 100%;
 }
 
 .menu{
@@ -63,7 +66,19 @@ header img{
     z-index: 0;
 }
 
-#opções{
+#but_oportuniza{
+    width: 35%;
+    height: 32vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid var(--lilas);
+    border-radius: 20px;
+    background-color: var(--fundo-opções);
+    box-shadow: var(--lilas) 8px 8px 15px;
+    cursor: pointer;
+}
+#but_oportunizado{
     width: 35%;
     height: 32vh;
     display: flex;
@@ -94,39 +109,42 @@ header img{
     margin-bottom: 30px;
 }
 
-.cadastro-oportuniza{
+#cadastro_oportuniza{
     position: absolute;
     z-index: -1;
     width: 100%;
     height: 100%;
     background-color: var(--cor-de-fundo);
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 30%;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2%;
 }
 
-.cadastro-oportunizado{
+#cadastro_oportunizado{
     position: absolute;
     z-index: -2;
     width: 100%;
     height: 100%;
     background-color: var(--cor-de-fundo);
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 30%;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2%;
 }
 
 .section{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 40%;
     font-family: "Grenze", sans-serif;
     color: var(--lilas);
     font-size: 20px;
     border: none;
+    margin-top: 3%;
 }
 
 .section input{
@@ -135,7 +153,7 @@ header img{
     border-left: none;
     border-right: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 15px;
     border-radius: 3px 3px 0px  0px;
     margin-bottom: 15px;
     outline: none;
@@ -150,7 +168,7 @@ input[type="date" i] {
 
 .section button{
     width: 20%;
-    margin: 10% 10% 10% 90%;
+    margin: 10% 10% 10% 80%;
     height: 25px;
     font-family: "Grenze", sans-serif;
     color: var(--lilas);
@@ -177,11 +195,16 @@ input[type="date" i] {
     }
     
     header{
-        margin-top: 10%;
+        margin-top: 5%;
+        height: 10%;
+    }
+
+    header a{
+        width: 30%;
     }
     
     header img{
-        width: 30%;
+        width: 100%;
         margin-right: 3%;
     }
     
@@ -198,7 +221,12 @@ input[type="date" i] {
         margin-top: 0;
     }
     
-    #opções{
+    #but_oportuniza{
+        width: 85%;
+        height: 25vh;
+    }
+
+    #but_oportunizado{
         width: 85%;
         height: 25vh;
     }
@@ -219,17 +247,26 @@ input[type="date" i] {
         height: 45%;
     }
 
-    .cadastro-oportuniza{
-        margin-top: 5%;
+    #cadastro_oportuniza{
+        margin-top: 0%;
+        flex-direction: column;
+        justify-content: center;
+        height: 95%;
+        align-items: center;
     }
 
-    .cadastro-oportunizado{
-        margin-top: 5%;
+    #cadastro_oportunizado{
+        margin-top: 0%;
+        flex-direction: column;
+        justify-content: center;
+        height: 95%;
+        align-items: center;
     }
 
     .section{
         width: 80%;
         font-size: 15px;
+        margin-top: 0%;
     }
 
     .section input{

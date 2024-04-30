@@ -66,12 +66,14 @@ header{
     width: 89%;
     margin-top: 5%;
     margin-left: 1%;
+    border: none;
 }
 
 .perfil{
     width: 60%;
     margin-top: 8%;
     cursor: pointer;
+    border: none;
 }
 
 #overlay a{
