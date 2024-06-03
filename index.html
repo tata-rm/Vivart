@@ -31,45 +31,42 @@
             <h1>Mapeia</h1>
             <a>Aqui você pode conhecer as escolas e universidades que oferecem cursos relacionados ao meio artístico e informações sobre os mesmos.</a>
         </div>
-
-        <div class="dropdown">
-            <button id="button-header">Selecione a cidade</button>
-            <div class="dropdown-content">
-                <a href="">Região Metropolitana</a>
-                <a href="">Alvorada</a>
-                <a href="">Araricá</a>
-                <a href="">Arroio dos Ratos</a>
-                <a href="">Cachoeirinha</a>
-                <a href="">Campo Bom</a>
-                <a href="">Canoas</a>
-                <a href="">Capela de Santana</a>
-                <a href="">Charqueadas</a>
-                <a href="">Dois Irmãos</a>
-                <a href="">Eldorado do Sul</a>
-                <a href="">Estância Velha</a>
-                <a href="">Esteio</a>
-                <a href="">Glorinha</a>
-                <a href="">Gravataí</a>
-                <a href="">Guaiba</a>
-                <a href="">Igrejinha</a>
-                <a href="">Montenegro</a>
-                <a href="">Nova Hartz</a>
-                <a href="">Nova Santa Rita</a>
-                <a href="">Novo Hamburgo</a>
-                <a href="">Parobé</a>
-                <a href="">Portão</a>
-                <a href="">Porto Alegre</a>
-                <a href="">Rolante</a>
-                <a href="">Santo Antônio da Patrulha</a>
-                <a href="">São Jerônimo</a>
-                <a href="">São Leopoldo</a>
-                <a href="">São Sebastião do Caí</a>
-                <a href="">Sapiranga</a>
-                <a href="">Sapucaia do Sul</a>
-                <a href="">Taquara</a>
-            </div>
-        </div>     
-
+        <select name="" id="cidade">
+            <option value="metropolitana">Região Metropolitana</option>
+            <option value="alvorada">Alvorada</option>
+            <option value="ararica">Araricá</option>
+            <option value="arroio">Arroio dos Ratos</option>
+            <option value="cachoeirinha">Cachoeirinha</option>
+            <option value="campobom">Campo Bom</option>
+            <option value="canoas">Canoas</option>
+            <option value="capela">Capela de Santana</option>
+            <option value="charqueadas">Charqueadas</option>
+            <option value="doisirmaos">Dois Irmãos</option>
+            <option value="eldorado">Eldorado do Sul</option>
+            <option value="estancia">Estância Velha</option>
+            <option value="esteio">Esteio</option>
+            <option value="glorinha">Glorinha</option>
+            <option value="gravatai">Gravataí</option>
+            <option value="guaiba">Guaiba</option>
+            <option value="igrejinha">Igrejinha</option>
+            <option value="montenegro">Montenegro</option>
+            <option value="novahartz">Nova Hartz</option>
+            <option value="novasantarita">Nova Santa Rita</option>
+            <option value="novohamburgo">Novo Hamburgo</option>
+            <option value="parobe">Parobé</option>
+            <option value="portao">Portão</option>
+            <option value="portoalegre">Porto Alegre</option>
+            <option value="rolante">Rolante</option>
+            <option value="santoantonio">Santo Antônio da Patrulha</option>
+            <option value="saojeronimo">São Jerônimo</option>
+            <option value="saoleopoldo">São Leopoldo</option>
+            <option value="saosebastiao">São Sebastião do Caí</option>
+            <option value="sapiranga">Sapiranga</option>
+            <option value="sapucaia">Sapucaia do Sul</option>
+            <option value="taquara">Taquara</option>
+        </select>
+        <button onclick="buscar()" id="buscar">Buscar</button>
+        
         <div class="area_mapa">
             <iframe class="mapa" src="https://www.google.com/maps/d/embed?mid=1hDBlOO6vi6XtAoPS6Sn1jN0is-tr_v4&ehbc=2E312F" width="640" height="480"></iframe>
 

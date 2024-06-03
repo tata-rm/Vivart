@@ -13,3 +13,22 @@ overlay.addEventListener("click", function(event){
 document.addEventListener("click", function() {
     overlay.style.zIndex = "-1";
 });
+
+
+function buscar() {
+    const cidade = document.getElementById("cidade")
+    const texto = document.getElementById("cursos")
+    console.log(cidade.value)
+
+    if(cidade.value == "metropolitana") {
+        texto.innerHTML = `
+            Escolas: <br>
+            - Nossa senhora aparecida
+        `
+    } else if(cidade.value == "canoas") {
+        texto.innerHTML = `
+        Escolas: <br>
+        - Padre Reus
+    `
+    }
+}
