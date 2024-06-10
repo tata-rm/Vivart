@@ -1,5 +1,7 @@
 create database vivart;
 
+use vivart;
+
 create table cadastro_oportunizado(
 	tipo enum("Oportuniza", "Oportunizado"),
     área enum("dança", "teatro", "musical"),
@@ -15,7 +17,6 @@ create table cadastro_oportunizado(
 );
 
 select * from cadastro_oportunizado;
-drop table cadastro_oportunizado;
 
 create table cadastro_oportuniza(
 	tipo enum("Oportuniza", "Oportunizado"),
@@ -30,9 +31,8 @@ create table cadastro_oportuniza(
     certificado varchar(255),
 	alvará varchar(255)
 );
-
 select * from cadastro_oportuniza;
-drop table cadastro_oportuniza;
+
 
 create table livros(
 	nome varchar(255) primary key,
@@ -42,4 +42,261 @@ create table livros(
     área enum("dança", "teatro", "musical"),
 	tipo enum("artigo", "livro")
 );
+
+create table escolas(
+	id int primary key auto_increment,
+	nome varchar(255),
+    cidade varchar(255)
+);
+select * from escolas;
+
+INSERT INTO escolas (nome, cidade) 
+VALUES 
+    ('Espaço expressão de rua', 'Alvorada'),
+    ('Estudio de Dança Nicole Amelini', 'Alvorada'),
+    ('Personnalité Estudio de Dança', 'Alvorada'),
+    ('Sublime Dança', 'Alvorada');
+
+INSERT INTO escolas (nome, cidade) 
+VALUES 
+    ('Estudio de Dança Daiane Weiss', 'Cachoeirinha'),
+    ('Gabrielle Heliodoro Estudio de Dança', 'Cachoeirinha'),
+    ('Criativus Centro de Dança', 'Cachoeirinha'),
+    ('Studio Rec in Dance', 'Cachoeirinha'),
+    ('Studio Holy Arts', 'Cachoeirinha'),
+    ('Solar Pole Dance Studio', 'Cachoeirinha');
+
+INSERT INTO escolas (nome, cidade) 
+VALUES 
+    ('Escola de Arte-educação', 'Campo Bom'),
+    ('Estúdio Fernanda Carvalho', 'Campo Bom');
+
+INSERT INTO escolas (nome, cidade) 
+VALUES 
+    ('Ópera Dança', 'Canoas'),
+    ('Swag Complex', 'Canoas'),
+    ('Ballet Erenita', 'Canoas'),
+    ('Academia de dança Semie Arte', 'Canoas'),
+    ('Kristian Galvão Danças', 'Canoas'),
+    ('Najma Safi', 'Canoas'),
+    ('Studio de Dança Attitude', 'Canoas'),
+    ('Casa da Art', 'Canoas'),
+    ('Studio Dancing Dream DançaKPOP', 'Canoas'),
+    ('Cadence Dance a Dois', 'Canoas'),
+    ('KAS Ballet', 'Canoas'),
+    ('Studio Spasso', 'Canoas'),
+    ('Studio de dança Ana Conrado', 'Canoas'),
+    ('Espaço de Dança Sol', 'Canoas'),
+    ('Galpão de Artes | Dança e teatro', 'Canoas'),
+    ('Ballet Ana Costa', 'Canoas'),
+    ('Connect Dance Canoas', 'Canoas'),
+    ('Studio Shake Dance', 'Canoas'),
+    ('ART&DANÇA', 'Canoas'),
+    ('Daniela Diaz Dança de Salão', 'Canoas'),
+    ('Deise Machado Estúdio', 'Canoas'),
+    ('Confraria do Samba', 'Canoas'),
+    ('Ballet Natália Birck', 'Canoas'),
+    ('Pole Dance By Ana Castro', 'Canoas');
+
+INSERT INTO escolas (nome, cidade) 
+VALUES 
+    ('Ballet Belos Passos', 'Charqueadas');
+
+INSERT INTO escolas (nome, cidade) 
+VALUES 
+    ('Ballerin Cia de Dança', 'Dois Irmãos'),
+    ('Mega Dance School', 'Dois Irmãos');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('You Dance Studio', 'Estância Velha');
+    
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Companhia de Dança Sabine Costella', 'Esteio'),
+    ('Franco Espaço Multicultural', 'Esteio'),
+    ('Paula Matte Estudio de Dança', 'Esteio'),
+    ('Studio de Dança La Flore', 'Esteio');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Dança Arte Celícia Santos', 'Gravataí'),
+    ('Estúdio de Dança Lousane', 'Gravataí'),
+    ('Studio 23', 'Gravataí'),
+    ('SD Ballet Rio Grande do Sul', 'Gravataí'),
+    ('IQM Espaço de Dança', 'Gravataí'),
+    ('Estúdio Dança Leila Klein', 'Gravataí'),
+    ('Ballerina Escola de Danças', 'Gravataí'),
+    ('EliDance Studio de Dança', 'Gravataí'),
+    ('KPOLE STUDIO', 'Gravataí'),
+    ('Studio Bianca Santos', 'Gravataí');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Estúdio de Dança MC', 'Guaíba'),
+    ('Movimento Grupo de Dança', 'Guaíba'),
+    ('Estação de Sonhos', 'Guaíba'),
+    ('Casa de Cultura e Arte', 'Guaíba');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Escola de Dança Suplés', 'Igrejinha');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Dança & Cia Flávio Azeredo', 'Montenegro'),
+    ('Studio Bálance', 'Montenegro'),
+    ('Espetáculo Escola de Arte', 'Montenegro');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Escola de dança Samuel Bianchi', 'Nova Santa Rita');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Mega Dance School', 'Novo Hamburgo'),
+    ('À Dança Escolas de Danças', 'Novo Hamburgo'),
+    ('Life Company Studio de Dança', 'Novo Hamburgo'),
+    ('JT Escola de Dança', 'Novo Hamburgo'),
+    ('Lucy Linck Danças & Terapias', 'Novo Hamburgo'),
+    ('Rita Ribeiro Dança & Cia', 'Novo Hamburgo'),
+    ('Jauana Doge Estúdio de Dança', 'Novo Hamburgo'),
+    ('Allegro Ballet NH', 'Novo Hamburgo'),
+    ('Maria Bailarina', 'Novo Hamburgo'),
+    ('Goa dança aérea', 'Novo Hamburgo'),
+    ('Marcy Studio de Dança', 'Novo Hamburgo'),
+    ('Mony Santos Dança e Cia', 'Novo Hamburgo'),
+    ('CARPE Centro de Arte', 'Novo Hamburgo'),
+    ('Grupo em Dança', 'Novo Hamburgo'),
+    ('Mahaila Escola de Danças Árabes', 'Novo Hamburgo'),
+    ('Estúdio Juliana Lorenzoni', 'Novo Hamburgo'),
+    ('Ballet Deisi Fleck', 'Novo Hamburgo'),
+    ('Pavilhão SCS', 'Novo Hamburgo'),
+    ('Resenha do Ritmo', 'Novo Hamburgo'),
+    ('Spiral Pole e Artes', 'Novo Hamburgo'),
+    ('Jade Pole Studio', 'Novo Hamburgo');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('LK Escola de Dança', 'Portão');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Gross Estudio de Dança', 'Porto Alegre'),
+    ('Gross Rio Branco Estudio de Dança', 'Porto Alegre'),
+    ('Confraria do Samba', 'Porto Alegre'),
+    ('Allegro Ballet', 'Porto Alegre'),
+    ('Donz Escola de Dança', 'Porto Alegre'),
+    ('Escola de Dança Aline Rosa', 'Porto Alegre'),
+    ('Cabriolle Studio de Dança', 'Porto Alegre'),
+    ('Kirinus e Nunes Centro Dança', 'Porto Alegre'),
+    ('Tri Escola de Dança', 'Porto Alegre'),
+    ('Frisson Escola de Dança', 'Porto Alegre'),
+    ('Escola de Dança Mara Noschang', 'Porto Alegre'),
+    ('Morada da Dança', 'Porto Alegre'),
+    ('RED | Escola de Dança e Desenvolvimento Humano', 'Porto Alegre'),
+    ('Studio F - Centro de Dança', 'Porto Alegre'),
+    ('Escola de Dança Ballerina', 'Porto Alegre'),
+    ('Escola de Dança Karin Ruschel', 'Porto Alegre'),
+    ('Território da Dança', 'Porto Alegre'),
+    ('Oito Tempos Escola de Dança', 'Porto Alegre'),
+    ('Cadica Danças E Ritmos', 'Porto Alegre'),
+    ('Dança Moderna Vera Guerra', 'Porto Alegre'),
+    ('Gira Centro de Dança - Unisinos', 'Porto Alegre'),
+    ('Gira Centro de Dança - Viva', 'Porto Alegre'),
+    ('Baila Escola de Dança', 'Porto Alegre'),
+    ('Pé na Dança', 'Porto Alegre'),
+    ('Escola De Dança CultDance', 'Porto Alegre'),
+    ('Escola de Dança Criação', 'Porto Alegre'),
+    ('Barcellos Dance a Dois', 'Porto Alegre'),
+    ('Carol Dalmolin Estúdio de Dança', 'Porto Alegre'),
+    ('DanceMob Club - Escola de dança', 'Porto Alegre'),
+    ('Ballancet Danças', 'Porto Alegre'),
+    ('Tríade Escola de Arte', 'Porto Alegre'),
+    ('Adhana Dance School', 'Porto Alegre'),
+    ('D`Alma Escola de Dança e Teatro', 'Porto Alegre'),
+    ('Escola De Dança Ritmos', 'Porto Alegre'),
+    ('Ciranda dos Ritmos', 'Porto Alegre'),
+    ('7&8 Studio de Dança', 'Porto Alegre'),
+    ('Studio Dance', 'Porto Alegre'),
+    ('Escola de Dança Gigi Sallenave', 'Porto Alegre'),
+    ('Studio Fernando Campani', 'Porto Alegre'),
+    ('Studio Applause Dança e Arte', 'Porto Alegre'),
+    ('Zathus espaço de dança', 'Porto Alegre'),
+    ('Centro de Dança Arthur Murray', 'Porto Alegre'),
+    ('Marcos Kieling Escola de Dança', 'Porto Alegre'),
+    ('Arabesque Escola de Dança', 'Porto Alegre'),
+    ('SOU - Centro de Artes', 'Porto Alegre'),
+    ('Fink Estúdio de Dança', 'Porto Alegre'),
+    ('Escola de Dança Mais Q Dançar', 'Porto Alegre'),
+    ('Companhia de Dança Cléber Borges', 'Porto Alegre'),
+    ('Ballet Vera Bublitz', 'Porto Alegre'),
+    ('Ballet Lenita Ruschel', 'Porto Alegre'),
+    ('Reticências Escola de Dança', 'Porto Alegre'),
+    ('Dançarte Studio de Dança', 'Porto Alegre'),
+    ('Espaço de Danças Karine Neves', 'Porto Alegre'),
+    ('Harém Dança do Ventre', 'Porto Alegre'),
+    ('Estúdio #MeteDança', 'Porto Alegre'),
+    ('Espaço de Danças Rodrigo Garbin', 'Porto Alegre'),
+    ('Bianca dos Santos', 'Porto Alegre'),
+    ('Ballet Bailarinando', 'Porto Alegre'),
+    ('Ballet Concerto Porto Alegre', 'Porto Alegre'),
+    ('Studio Verri Dança&Movimento', 'Porto Alegre'),
+    ('Ballet Rejane Rodrigues', 'Porto Alegre'),
+    ('Studio de Dança Paulo Pinheiro', 'Porto Alegre'),
+    ('Studio Andança', 'Porto Alegre'),
+    ('Ballet Elizabeth Santos', 'Porto Alegre'),
+    ('Claquê Centro de Sapateado', 'Porto Alegre'),
+    ('Espaço Bela Dança', 'Porto Alegre'),
+    ('Malu & Roberto | bachata & salsa', 'Porto Alegre'),
+    ('Liberta Espaço Multicultural', 'Porto Alegre'),
+    ('Zoom e Artes', 'Porto Alegre'),
+    ('Sabor Latino Studio de Dança', 'Porto Alegre');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Escola de Dança Suplés', 'Rolante');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Escola de Dança Robson Mesquita', 'Santo Antônio da Patrulha'),
+    ('Oficina de Dança Renata Guimarães', 'Santo Antônio da Patrulha');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Casa da Dança SJ', 'São Jerônimo');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Ballet Davi Sgarbi', 'São Leopoldo'),
+    ('Brilhart Escola de Dança', 'São Leopoldo'),
+    ('Bruna Pelison Studio de Dança', 'São Leopoldo'),
+    ('Joy in Motion Studio de Dança', 'São Leopoldo'),
+    ('Passo a Passo Escola de Dança', 'São Leopoldo'),
+    ('Estúdio de danças Dêni Cezimbra', 'São Leopoldo'),
+    ('Ballet Sinos', 'São Leopoldo'),
+    ('KAEN escola de artes', 'São Leopoldo');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('TAS Studio de Dança', 'São Sebastião do Caí');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Estúdio Athos', 'Sapiranga'),
+    ('Arte & Movimento - Dança e Pilates', 'Sapiranga'),
+    ('Estúdio de Dança de Salão', 'Sapiranga'),
+    ('Arte & Essência Espaço Artístico', 'Sapiranga');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Ballet Pâmela Klock', 'Sapucaia'),
+    ('Estudio de Danças Bárbara Oliveira', 'Sapucaia'),
+    ('Chaussard Estudio de Dança - Fortuna', 'Sapucaia'),
+    ('Chaussard Estudio de Dança - Ipiranga', 'Sapucaia'),
+    ('GROSS Estúdio de Dança', 'Sapucaia');
+
+INSERT INTO Escolas (nome, cidade) 
+VALUES 
+    ('Escola de Dança Simone Carvalho', 'Triunfo');
 
