@@ -17,19 +17,8 @@ document.addEventListener("click", function() {
 });
 
 
-function buscar() {
-    const cidade = document.getElementById("cidade")
-    const texto = document.getElementById("cursos")
+document.addEventListener('DOMContentLoaded', async () =>{
+    const response = await fetch('http://localhost:3000/api/get/escolas/');
 
-    if(cidade.value == "metropolitana") {
-        texto.innerHTML = `
-            Escolas: <br>
-            - Nossa senhora aparecida
-        `
-    } else if(cidade.value == "canoas") {
-        texto.innerHTML = `
-        Escolas: <br>
-        - Padre Reus
-    `
-    }
-}
+    console.log(result);
+});

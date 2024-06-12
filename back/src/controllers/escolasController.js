@@ -1,10 +1,9 @@
 const connection = require('../config/db');
 const dotenv = require('dotenv').config();
 
-//----------------------------------------
-function retornaEscolas(req, res){
-    app.get('/escolas', (req, res) => {
-        connection.query('SELECT nome FROM escolas', (err, results) => {
+async function retornaEscolas(req, res){
+        console.log(req.params.cidade)
+        connection.query(`SELECT nome FROM escolas where cidade like '${req.params.cidade}'`, (err, results) => {
             if (err) {
                 console.error('Erro ao executar a consulta:', err);
                 res.status(500).json({ error: 'Erro interno do servidor' });
@@ -12,9 +11,7 @@ function retornaEscolas(req, res){
             }
             res.json(results);
         });
-    });
 }
-//--------------------------------------------
 
 async function storeEscolas(request, response) {
     const params = Array(
@@ -42,5 +39,6 @@ async function storeEscolas(request, response) {
 }
 
 module.exports = {
-    storeEscolas
+    storeEscolas,
+    retornaEscolas
 }
