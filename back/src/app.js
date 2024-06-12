@@ -12,5 +12,6 @@ app.use(express.json());
 app.use(cors());
 //rota do pacote multer
 app.use('/uploads', express.static(__dirname + '\\public'));
+app.use('/api', escolasRouter);
 
 module.exports = app;
