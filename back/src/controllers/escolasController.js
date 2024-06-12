@@ -1,4 +1,4 @@
-const { Connection } = require('mysql2/typings/mysql/lib/Connection');
+// const connection = require('mysql2/typings/mysql/lib/Connection');
 const connection = require('../config/db');
 const dotenv = require('dotenv').config();
 
