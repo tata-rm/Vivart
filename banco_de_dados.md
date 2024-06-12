@@ -12,8 +12,10 @@ create table cadastro_oportunizado(
     senha varchar(255) not null,
     email varchar(255) unique not null,
     texto varchar(255),
-    curriculo varchar(255),
-    certificado varchar(255)
+    documento1 varchar(255),
+    documento2 varchar(255),
+    documento3 varchar(255),
+
 );
 
 select * from cadastro_oportunizado;
@@ -28,8 +30,9 @@ create table cadastro_oportuniza(
     senha varchar(255) not null,
     email varchar(255) unique not null,
     texto varchar(255),
-    certificado varchar(255),
-	alvará varchar(255)
+    documento1 varchar(255),
+    documento2 varchar(255),
+    documento3 varchar(255),
 );
 select * from cadastro_oportuniza;
 
@@ -55,24 +58,15 @@ VALUES
     ('Espaço expressão de rua', 'Alvorada'),
     ('Estudio de Dança Nicole Amelini', 'Alvorada'),
     ('Personnalité Estudio de Dança', 'Alvorada'),
-    ('Sublime Dança', 'Alvorada');
-
-INSERT INTO escolas (nome, cidade) 
-VALUES 
+    ('Sublime Dança', 'Alvorada'),
     ('Estudio de Dança Daiane Weiss', 'Cachoeirinha'),
     ('Gabrielle Heliodoro Estudio de Dança', 'Cachoeirinha'),
     ('Criativus Centro de Dança', 'Cachoeirinha'),
     ('Studio Rec in Dance', 'Cachoeirinha'),
     ('Studio Holy Arts', 'Cachoeirinha'),
-    ('Solar Pole Dance Studio', 'Cachoeirinha');
-
-INSERT INTO escolas (nome, cidade) 
-VALUES 
+    ('Solar Pole Dance Studio', 'Cachoeirinha'),
     ('Escola de Arte-educação', 'Campo Bom'),
-    ('Estúdio Fernanda Carvalho', 'Campo Bom');
-
-INSERT INTO escolas (nome, cidade) 
-VALUES 
+    ('Estúdio Fernanda Carvalho', 'Campo Bom'),
     ('Ópera Dança', 'Canoas'),
     ('Swag Complex', 'Canoas'),
     ('Ballet Erenita', 'Canoas'),
@@ -96,30 +90,15 @@ VALUES
     ('Deise Machado Estúdio', 'Canoas'),
     ('Confraria do Samba', 'Canoas'),
     ('Ballet Natália Birck', 'Canoas'),
-    ('Pole Dance By Ana Castro', 'Canoas');
-
-INSERT INTO escolas (nome, cidade) 
-VALUES 
-    ('Ballet Belos Passos', 'Charqueadas');
-
-INSERT INTO escolas (nome, cidade) 
-VALUES 
+    ('Pole Dance By Ana Castro', 'Canoas'),
+    ('Ballet Belos Passos', 'Charqueadas'),
     ('Ballerin Cia de Dança', 'Dois Irmãos'),
-    ('Mega Dance School', 'Dois Irmãos');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
-    ('You Dance Studio', 'Estância Velha');
-    
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Mega Dance School', 'Dois Irmãos'),
+    ('You Dance Studio', 'Estância Velha'),
     ('Companhia de Dança Sabine Costella', 'Esteio'),
     ('Franco Espaço Multicultural', 'Esteio'),
     ('Paula Matte Estudio de Dança', 'Esteio'),
-    ('Studio de Dança La Flore', 'Esteio');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Studio de Dança La Flore', 'Esteio'),
     ('Dança Arte Celícia Santos', 'Gravataí'),
     ('Estúdio de Dança Lousane', 'Gravataí'),
     ('Studio 23', 'Gravataí'),
@@ -129,31 +108,16 @@ VALUES
     ('Ballerina Escola de Danças', 'Gravataí'),
     ('EliDance Studio de Dança', 'Gravataí'),
     ('KPOLE STUDIO', 'Gravataí'),
-    ('Studio Bianca Santos', 'Gravataí');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Studio Bianca Santos', 'Gravataí'),
     ('Estúdio de Dança MC', 'Guaíba'),
     ('Movimento Grupo de Dança', 'Guaíba'),
     ('Estação de Sonhos', 'Guaíba'),
-    ('Casa de Cultura e Arte', 'Guaíba');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
-    ('Escola de Dança Suplés', 'Igrejinha');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Casa de Cultura e Arte', 'Guaíba'),
+    ('Escola de Dança Suplés', 'Igrejinha'),
     ('Dança & Cia Flávio Azeredo', 'Montenegro'),
     ('Studio Bálance', 'Montenegro'),
-    ('Espetáculo Escola de Arte', 'Montenegro');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
-    ('Escola de dança Samuel Bianchi', 'Nova Santa Rita');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Espetáculo Escola de Arte', 'Montenegro'),
+    ('Escola de dança Samuel Bianchi', 'Nova Santa Rita'),
     ('Mega Dance School', 'Novo Hamburgo'),
     ('À Dança Escolas de Danças', 'Novo Hamburgo'),
     ('Life Company Studio de Dança', 'Novo Hamburgo'),
@@ -174,14 +138,8 @@ VALUES
     ('Pavilhão SCS', 'Novo Hamburgo'),
     ('Resenha do Ritmo', 'Novo Hamburgo'),
     ('Spiral Pole e Artes', 'Novo Hamburgo'),
-    ('Jade Pole Studio', 'Novo Hamburgo');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
-    ('LK Escola de Dança', 'Portão');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Jade Pole Studio', 'Novo Hamburgo'),
+    ('LK Escola de Dança', 'Portão'),
     ('Gross Estudio de Dança', 'Porto Alegre'),
     ('Gross Rio Branco Estudio de Dança', 'Porto Alegre'),
     ('Confraria do Samba', 'Porto Alegre'),
@@ -251,23 +209,11 @@ VALUES
     ('Malu & Roberto | bachata & salsa', 'Porto Alegre'),
     ('Liberta Espaço Multicultural', 'Porto Alegre'),
     ('Zoom e Artes', 'Porto Alegre'),
-    ('Sabor Latino Studio de Dança', 'Porto Alegre');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
-    ('Escola de Dança Suplés', 'Rolante');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Sabor Latino Studio de Dança', 'Porto Alegre'),
+    ('Escola de Dança Suplés', 'Rolante'),
     ('Escola de Dança Robson Mesquita', 'Santo Antônio da Patrulha'),
-    ('Oficina de Dança Renata Guimarães', 'Santo Antônio da Patrulha');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
-    ('Casa da Dança SJ', 'São Jerônimo');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Oficina de Dança Renata Guimarães', 'Santo Antônio da Patrulha'),
+    ('Casa da Dança SJ', 'São Jerônimo'),
     ('Ballet Davi Sgarbi', 'São Leopoldo'),
     ('Brilhart Escola de Dança', 'São Leopoldo'),
     ('Bruna Pelison Studio de Dança', 'São Leopoldo'),
@@ -275,28 +221,16 @@ VALUES
     ('Passo a Passo Escola de Dança', 'São Leopoldo'),
     ('Estúdio de danças Dêni Cezimbra', 'São Leopoldo'),
     ('Ballet Sinos', 'São Leopoldo'),
-    ('KAEN escola de artes', 'São Leopoldo');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
-    ('TAS Studio de Dança', 'São Sebastião do Caí');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('KAEN escola de artes', 'São Leopoldo'),
+    ('TAS Studio de Dança', 'São Sebastião do Caí'),
     ('Estúdio Athos', 'Sapiranga'),
     ('Arte & Movimento - Dança e Pilates', 'Sapiranga'),
     ('Estúdio de Dança de Salão', 'Sapiranga'),
-    ('Arte & Essência Espaço Artístico', 'Sapiranga');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('Arte & Essência Espaço Artístico', 'Sapiranga'),
     ('Ballet Pâmela Klock', 'Sapucaia'),
     ('Estudio de Danças Bárbara Oliveira', 'Sapucaia'),
     ('Chaussard Estudio de Dança - Fortuna', 'Sapucaia'),
     ('Chaussard Estudio de Dança - Ipiranga', 'Sapucaia'),
-    ('GROSS Estúdio de Dança', 'Sapucaia');
-
-INSERT INTO Escolas (nome, cidade) 
-VALUES 
+    ('GROSS Estúdio de Dança', 'Sapucaia'),
     ('Escola de Dança Simone Carvalho', 'Triunfo');
 

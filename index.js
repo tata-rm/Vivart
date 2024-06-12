@@ -1,3 +1,5 @@
+
+
 const logo = document.getElementById("logo");
 const overlay = document.getElementById("overlay");
 
@@ -18,7 +20,6 @@ document.addEventListener("click", function() {
 function buscar() {
     const cidade = document.getElementById("cidade")
     const texto = document.getElementById("cursos")
-    console.log(cidade.value)
 
     if(cidade.value == "metropolitana") {
         texto.innerHTML = `
