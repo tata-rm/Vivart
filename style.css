@@ -172,7 +172,7 @@ header input{
     flex-direction: row;
 }
 
-#cursos{
+.cursos{
     width: 30%;
     margin-left: 5%;
     display: flex;
@@ -267,7 +267,7 @@ header input{
         height: 40vh;
     }
 
-    #cursos{
+    .cursos{
         width: 90%;
         margin-left: 5%;
         font-size: 15px;
