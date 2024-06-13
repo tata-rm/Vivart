@@ -16,20 +16,30 @@ document.addEventListener("click", function() {
     overlay.style.zIndex = "-1";
 });
 
+const button = document.getElementById('buscar');
+const selectCidade = document.getElementById('cidade');
 
-document.addEventListener('DOMContentLoaded', async () =>{
-    const response = await fetch('http://localhost:3000/api/get/escolas/');
+button.addEventListener('click', async () =>{
+    const cidadeSelecionada = selectCidade.value;
+
+
+    const response = await fetch('http://localhost:3000/api/get/escolas?cidade=${cidadeSelecionada}');
     const result = await response.json();
 
     if(result.sucess) {
-        const escolas = document.querySelectorAll('cursos');
+        const cursosDiv = document.querySelectorAll('.cursos');
+        cursosDiv.innerHTML = '';
+
         result.data.forEach(escolas => {
             const nome = document.createElemente('p');
             nome.textContent = escolas.nome;
+
+            cursosDiv.appendChild(nome);
         }) 
         
-        escolas.appendChild(nome);
     } else {
         console.log("Erro", result.sql);
     }
 });
+
+

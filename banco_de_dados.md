@@ -14,8 +14,7 @@ create table cadastro_oportunizado(
     texto varchar(255),
     documento1 varchar(255),
     documento2 varchar(255),
-    documento3 varchar(255),
-
+    documento3 varchar(255)
 );
 
 select * from cadastro_oportunizado;
@@ -32,7 +31,7 @@ create table cadastro_oportuniza(
     texto varchar(255),
     documento1 varchar(255),
     documento2 varchar(255),
-    documento3 varchar(255), 
+    documento3 varchar(255)
 );
 select * from cadastro_oportuniza;
 
