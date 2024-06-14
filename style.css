@@ -85,7 +85,7 @@ header{
 
 #overlay p{
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
 }
@@ -150,6 +150,7 @@ header input{
     background-color: var(--cinza);
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 8vh;
 }
 
 #buscar {
@@ -160,7 +161,7 @@ header input{
     font-family: "Grenze", sans-serif;
     color: var(--cinza-escuro);
     background-color: var(--cinza);
-    width: 5%;
+    width: 6%;
     border-radius: 4px;
     cursor: pointer;
 }
