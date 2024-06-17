@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="overlay" class="hidden">
+        <img class="logo-overlay" src="imagens/logovivart.png" alt="">
+        <a href="login.html"> <img class="perfil" src="imagens/perfil.png"></a>
+        <p id="mapeia">Mapeia</p>
+        <p id="no-brasil">No Brasil</p>
+        <p id="leituras">Leituras</p>
+    </div>
+
+    <header>
+
+        <img src="imagens/logovivart.png" id="logo">
+
+        <input type="text" placeholder="Pesquisar">
+    </header>
+    <main>
+        <div class="titulo-paginas">
+            <h1>Mapeia</h1>
+            <a>Aqui você pode conhecer as escolas e universidades que oferecem cursos relacionados ao meio artístico e informações sobre os mesmos.</a>
+        </div>
+        <select name="" id="cidade">
+            <option value="metropolitana">Região Metropolitana</option>
+            <option value="alvorada">Alvorada</option>
+            <option value="ararica">Araricá</option>
+            <option value="arroio">Arroio dos Ratos</option>
+            <option value="cachoeirinha">Cachoeirinha</option>
+            <option value="campobom">Campo Bom</option>
+            <option value="canoas">Canoas</option>
+            <option value="capela">Capela de Santana</option>
+            <option value="charqueadas">Charqueadas</option>
+            <option value="doisirmaos">Dois Irmãos</option>
+            <option value="eldorado">Eldorado do Sul</option>
+            <option value="estancia">Estância Velha</option>
+            <option value="esteio">Esteio</option>
+            <option value="glorinha">Glorinha</option>
+            <option value="gravatai">Gravataí</option>
+            <option value="guaiba">Guaiba</option>
+            <option value="igrejinha">Igrejinha</option>
+            <option value="ivoti">Ivoti</option>
+            <option value="montenegro">Montenegro</option>
+            <option value="novahartz">Nova Hartz</option>
+            <option value="novasantarita">Nova Santa Rita</option>
+            <option value="novohamburgo">Novo Hamburgo</option>
+            <option value="parobe">Parobé</option>
+            <option value="portao">Portão</option>
+            <option value="portoalegre">Porto Alegre</option>
+            <option value="rolante">Rolante</option>
+            <option value="santoantonio">Santo Antônio da Patrulha</option>
+            <option value="saojeronimo">São Jerônimo</option>
+            <option value="saoleopoldo">São Leopoldo</option>
+            <option value="saosebastiao">São Sebastião do Caí</option>
+            <option value="sapiranga">Sapiranga</option>
+            <option value="sapucaia">Sapucaia do Sul</option>
+            <option value="taquara">Taquara</option>
+            <option value="triunfo">Triunfo</option>
+            <option value="viamao">Viamão</option>
+        </select>
+        <button onclick="javascript:buscar()" id="buscar">Buscar</button>
+        
+        <div class="area_mapa">
+            <iframe class="mapa" src="https://www.google.com/maps/d/embed?mid=1hDBlOO6vi6XtAoPS6Sn1jN0is-tr_v4&ehbc=2E312F" width="640" height="480"></iframe>
+            
+            <div class="cursos">
+                Escolas: <br>
+                texto texto texto <br>
+                texto texto texto <br>
+                texto texto texto <br><br>
+                
+                Universidades:<br><br>
+                
+                Curso -----<br>
+                texto texto texto<br>
+                texto texto texto<br>
+                texto texto texto<br>
+                texto texto texto<br><br>
+                
+                Curso ------<br>
+                texto texto texto<br>
+                texto texto texto<br>
+                texto texto texto<br>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </main>
+    
+    <script src="index.js"></script>
+
+</body>
+</html>
