@@ -70,7 +70,7 @@ header{
 }
 
 .perfil{
-    width: 60%;
+    width: 65%;
     margin-top: 8%;
     cursor: pointer;
     border: none;
@@ -85,7 +85,7 @@ header{
 
 #overlay p{
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 40px;
+    font-size: 60px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
 }
@@ -150,7 +150,7 @@ header input{
     background-color: var(--cinza);
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 8vh;
+ 
 }
 
 #buscar {
@@ -176,7 +176,6 @@ header input{
 .cursos{
     width: 30%;
     margin-left: 5%;
-    display: flex;
     align-items: center;
     font-family: "Grenze", sans-serif;
     color: var(--cinza-escuro);
