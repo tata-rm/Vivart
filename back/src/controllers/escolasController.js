@@ -9,7 +9,11 @@ async function retornaEscolas(req, res){
                 res.status(500).json({ error: 'Erro interno do servidor' });
                 return;
             }
-            res.json(results);
+            res.status(200).json({
+                success: true,
+                message: "Sucesso!",
+                data: results
+            })
         });
 }
 
