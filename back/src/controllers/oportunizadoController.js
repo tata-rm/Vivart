@@ -1,11 +1,11 @@
 const connection = require('../config/db');
-const dotenv = require('dotenv').config();
-const path = require('path');
-const fs = require('fs');
+//const dotenv = require('dotenv').config();
+//const path = require('path');
+//const fs = require('fs');
 
-const uploadPath = path.join(__dirname, '..', 'uploads');
+//const uploadPath = path.join(__dirname, '..', 'uploads');
 
-if(!fs.existsSync(uploadPath)) {
+/*if(!fs.existsSync(uploadPath)) {
     fs.mkdirSync(uploadPath);
 }
 
@@ -28,7 +28,8 @@ async function storeOportunizado(request, response) {
                 message: "Erro ao mover o arquivo"
             })
         }
-    })
+    })*/
+async function storeOportunizado(request, response) {
     const params = Array(
         request.body.area,
         request.body.nome,
@@ -46,21 +47,21 @@ async function storeOportunizado(request, response) {
     connection.query(query, params, (err, results) => {
         if(results) {
             response.status(200).json({
-                    success: true,
-                    message: "Sucesso!",
-                    data: results
-                })
+                success: true,
+                message: "Sucesso!",
+                data: results
+            })
         } else {
             response.status(400).json({
-                    sucess: false,
-                    message: "Ops, deu problema!",
-                    sql: err
-                })
+                sucess: false,
+                message: "Sem sucesso!",
+                sql: err
+            })
         }
     });
 }
 
 
 module.exports = {
-    storeOportunizado,
+    storeOportunizado
 }

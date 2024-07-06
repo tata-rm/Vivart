@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const dotenv = require('dotenv').config();
+const env = require('dotenv').config();
 
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -8,11 +8,11 @@ const connection = mysql.createConnection({
     database: process.env.DB_DATABASE,
 });
 
-connection.connect(function(err) {
+connection.connect((err) => {
     if(err) {
         throw err;
     } else {
-        console.log("Mysql conectado");
+        console.log('Mysql conectado');
     }
 });
 
