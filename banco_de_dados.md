@@ -4,7 +4,7 @@ use vivart;
 
 create table cadastro_oportunizado(
 	tipo enum("Oportuniza", "Oportunizado"),
-    área enum("dança", "teatro", "musical"),
+    area enum("dança", "teatro", "musical"),
 	nome varchar(255) not null,
     data_nasc date not null,
     cpf varchar(255) primary key not null,
@@ -21,7 +21,7 @@ select * from cadastro_oportunizado;
 
 create table cadastro_oportuniza(
 	tipo enum("Oportuniza", "Oportunizado"),
-    área enum("dança", "teatro", "musical"),
+    area enum("dança", "teatro", "musical"),
 	nome varchar(255) not null,
     data_inicio date not null,
     cnpj varchar(255) primary key not null,
@@ -41,7 +41,7 @@ create table livros(
     autor varchar(255),
     data_lançamento date,
     quant_páginas int,
-    área enum("dança", "teatro", "musical"),
+    area enum("dança", "teatro", "musical"),
 	tipo enum("artigo", "livro")
 );
 
