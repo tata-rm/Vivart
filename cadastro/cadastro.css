@@ -24,7 +24,7 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 2%;
+    margin-top: 5%;
     height: 30%;
 }
 
@@ -200,7 +200,7 @@ input[type="date" i] {
     }
     
     header{
-        margin-top: 5%;
+        margin-top: 10%;
         height: 10%;
     }
 
