@@ -5,22 +5,24 @@ const connection = require('../config/db');
 
 async function storeOportuniza(request, response) {
     const params = Array(
-        request.body.area,
-        request.body.nome,
-        request.body.data_inicio,
-        request.body.cnpj,
-        request.body.telefone,
-        request.body.senha,
-        request.body.email,
-        request.body.texto,
-        request.body.documento1,
-        request.body.documento2,
-        request.body.documento3
+        request.body.areaOportuniza,
+        request.body.nomeOportuniza,
+        request.body.data_inicioOportuniza,
+        request.body.cnpjOportuniza,
+        request.body.celOportuniza,
+        request.body.senhaOportuniza,
+        request.body.emailOportuniza,
+        request.body.experiênciasOportuniza,
+        request.body.docOportuniza
     );
 
-    const query = "INSERT INTO cadastro_oportuniza(area, nome, data_inicio, cnpj, telefone, senha, email, texto, documento1, documento2, documento3) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+    console.log(request.body)
+
+
+    const query = "INSERT INTO cadastro_oportuniza(area, nome, data_inicio, cnpj, telefone, senha, email, texto, documento1) VALUES(?,?,?,?,?,?,?,?,?)";
     
     connection.query(query, params, (err, results) => {
+
         if(results) {
             response.status(200).json({
                 success: true,
@@ -28,8 +30,9 @@ async function storeOportuniza(request, response) {
                 data: results
             })
         } else {
+            console.log(err)
             response.status(400).json({
-                sucess: false,
+                success: false,
                 message: "Sem sucesso!",
                 data: err
             })

@@ -9,7 +9,6 @@ async function loginOportuniza(request, response) {
         if(results.length > 0) {
             const senha = request.body.senha;
             const senhaQuery = results[0].senha;
-            
             if (senha === senhaQuery) {
                 response.status(200).json({
                     success: true,
