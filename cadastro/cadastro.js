@@ -36,21 +36,24 @@ but_oportunizado.addEventListener("click", function() {
     let danca = document.getElementById("dançaOportuniza").value;
     let musica = document.getElementById("musicaOportuniza").value;
     let teatro = document.getElementById("teatroOportuniza").value;
+    let areaOportuniza = ""
     if (danca === "on" + teatro === "on" + musica === "on") {
-        let areaOportuniza = danca + teatro + musica;
+        areaOportuniza = danca + teatro + musica;
     } else if (danca === "on" + teatro === "on") {
-        let areaOportuniza = danca + teatro;
+        areaOportuniza = danca + teatro;
     } else if (teatro === "on" + musica === "on") {
-        let areaOportuniza = teatro + musica;
+        areaOportuniza = teatro + musica;
     } else if (danca === "on" + musica === "on") {
-        let areaOportuniza = danca + musica;
+        areaOportuniza = danca + musica;
     } else if (danca === "on") {
-        let areaOportuniza = danca;
+        areaOportuniza = danca;
     } else if (teatro == "on") {
-        let areaOportuniza = teatro;
+        areaOportuniza = teatro;
     } else {
-        let areaOportuniza = musica;
+        areaOportuniza = musica;
     }
+
+
     let docOportuniza = document.getElementById("docOportuniza").value;
     let data = {nomeOportuniza, data_inicioOportuniza, cnpjOportuniza, emailOportuniza, celOportuniza, experiênciasOportuniza, senhaOportuniza, areaOportuniza, docOportuniza};
 
@@ -69,24 +72,47 @@ but_oportunizado.addEventListener("click", function() {
     }
 }
 
-let enviarOportunizado = document.getElementById("enviarOportunizado");
-enviarOportunizado.onclick = async function() {
+/*----------------------------------------------------------------*/
 
-    let form = document.getElementById("form");
-    let dadosForm = new FormData(form);
+let enviarOportunizado = document.getElementById("enviarOportunizado");
+enviarOportunizado.onclick = async function(event) {
+    event.preventDefault();
+
+    let form_oportunizado = document.getElementById("cadastro_oportunizado");
+    let dadosForm = new FormData(form_oportunizado);
+
+    let danca = document.getElementById("dançaOportuniza").value;
+    let musica = document.getElementById("musicaOportuniza").value;
+    let teatro = document.getElementById("teatroOportuniza").value;
+    let areaOportunizado = ""
+    if (danca === "on" + teatro === "on" + musica === "on") {
+        areaOportunizado = danca + teatro + musica;
+    } else if (danca === "on" + teatro === "on") {
+        areaOportunizado = danca + teatro;
+    } else if (teatro === "on" + musica === "on") {
+        areaOportunizado = teatro + musica;
+    } else if (danca === "on" + musica === "on") {
+        areaOportunizado = danca + musica;
+    } else if (danca === "on") {
+        areaOportunizado = danca;
+    } else if (teatro == "on") {
+        areaOportunizado = teatro;
+    } else {
+        areaOportunizado = musica;
+    }
+    dadosForm.append('areaOportunizado', areaOportunizado);
+
 
     const response = await fetch('http://localhost:3003/api/oportunizado/create', {
        method: "POST",
-       headers: {"Content-Type": "application/js"},
        body: dadosForm
    });
 
    let content = await response.json();
-   console.log(err.response.data)
 
    if(content.sucess) {
        alert("Sucesso")
    } else {
        alert("Não");
    }
-}
+};

@@ -18,6 +18,9 @@
     background-color: var(--cor-de-fundo);
     overflow: hidden;
 }
+body {
+    margin: 0;
+}
 
 header{
     display: flex;

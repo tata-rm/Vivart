@@ -32,43 +32,43 @@
             </section>
         </section>
 
-        <section id="cadastro_oportuniza">
+        <form id="cadastro_oportuniza" action="#" enctype="multipart/form-data">
             <section class="section">
-                <input type="text" placeholder="Nome:" id="nomeOportuniza">
-                <input type="date" placeholder="Data de início:" id="data_inicioOportuniza">
-                <input type="number" placeholder="CNPJ:" id="cnpjOportuniza">
-                <input type="email" placeholder="E-mail:" id="emailOportuniza">
-                <input type="number" placeholder="Celular:" id="celOportuniza">
+                <input type="text" placeholder="Nome:" id="nomeOportuniza" name="nomeOportuniza">
+                <input type="date" placeholder="Data de início:" id="data_inicioOportuniza" name="data_inicioOportuniza">
+                <input type="number" placeholder="CNPJ:" id="cnpjOportuniza" name="cnpjOportuniza">
+                <input type="email" placeholder="E-mail:" id="emailOportuniza" name="emailOportuniza">
+                <input type="number" placeholder="Celular:" id="celOportuniza" name="celOportuniza">
             </section>
             <section class="section">
-                <input type="text" placeholder="Breve texto sobre o oportuniza:" id="experiênciasOportuniza">
-                <input type="password" placeholder="Senha:" id="senhaOportuniza">
+                <input type="text" placeholder="Breve texto sobre o oportuniza:" id="experiênciasOportuniza" name="experiênciasOportuniza">
+                <input type="password" placeholder="Senha:" id="senhaOportuniza" name="senhaOportuniza">
                 <div id="opções-cadastro">
                     <div>
-                        <input type="checkbox" placeholder="Dança" id="dançaOportuniza"> Dança
+                        <input type="checkbox" placeholder="Dança" id="dançaOportuniza" name="dançaOportuniza"> Dança
                     </div>
                     <div>
-                        <input type="checkbox" placeholder="Teatro" id="teatroOportuniza"> Teatro
+                        <input type="checkbox" placeholder="Teatro" id="teatroOportuniza" name="teatroOportuniza"> Teatro
                     </div>
                     <div>
-                        <input type="checkbox" placeholder="Música" id="musicaOportuniza"> Música
+                        <input type="checkbox" placeholder="Música" id="musicaOportuniza" name="musicaOportuniza"> Música
                     </div>
                 </div>
-                <p id="docOportuniza">Documento</p>
+                <input type="file" placeholder="Documento" id="docOportuniza" name="docOportuniza">
                 <button id="enviarOportuniza">Enviar</button>
             </section>
-        </section>
+        </form>
 
-        <section id="cadastro_oportunizado">
-            <form action="#" class="section" enctype="multipart/form-data" id="form">
+        <form id="cadastro_oportunizado" action="#" enctype="multipart/form-data">
+            <section class="section">
                 <input type="text" placeholder="Nome:" id="nomeOportunizado" name="nomeOportunizado">
                 <input type="date" placeholder="Data de Nascimento:" id="data_nascOportunizado" name="data_nascOportunizado">
                 <input type="number" placeholder="CPF:" id="cpfOportunizado" name="cpfOportunizado">
                 <input type="email" placeholder="E-mail:" id="emailOportunizado" name="emailOportunizado">
                 <input type="number" placeholder="Celular:" id="celOportunizado" name="celOportunizado">
-            </form>
-            <form action="#" class="section" enctype="multipart/form-data" id="form">
-                <input type="text" placeholder="Breve texto sobre suas experiências:" id="experiênciasOportunizado" name="experiênciasOportunizado">
+            </section>
+            <section class="section">
+                <input type="text" placeholder="Breve texto sobre suas experiências:" id="experienciasOportunizado" name="experienciasOportunizado">
                 <input type="password" placeholder="Senha:" id="senhaOportunizado" name="senhaOportunizado">
                 <div id="opções-cadastro">
                     <div>
@@ -83,7 +83,7 @@
                 </div>
                 <input type="file" placeholder="Documento" id="docOportunizado" name="docOportunizado">
                 <button id="enviarOportunizado">Enviar</button>
-            </form>
+            </section>
         </section>
     </main>
 

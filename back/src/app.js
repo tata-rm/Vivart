@@ -5,9 +5,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 require('dotenv').config();
-//const path = require('path');
-//const fs = require('fs');
-//const fileupload = require('express-feliupload');
+const path = require('path');
+const fs = require('fs');
+const fileupload = require('express-fileupload');
 
 const escolasRouter = require('./routes/escolasRouter');
 const oportunizaRouter = require('./routes/oportunizaRouter');
@@ -18,7 +18,7 @@ const loginOportunizadoRouter = require('./routes/loginOportunizaRouter');
 app.set('port', process.env.PORT || 3005);
 app.use(express.json());
 app.use(cors());
-//app.use(fileupload());
+app.use(fileupload());
 
 //habilitar utilização na aplicação:
 app.use('/api', escolasRouter);

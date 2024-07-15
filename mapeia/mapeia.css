@@ -24,6 +24,10 @@
     background-color: var(--cor-de-fundo);
 }
 
+body {
+    margin: 0;
+}
+
 header{
     display: flex;
     flex-direction: row;
