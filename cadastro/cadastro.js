@@ -24,43 +24,36 @@ but_oportunizado.addEventListener("click", function() {
 /*--------------------------------------------------------------------------*/
 
  let enviarOportuniza = document.getElementById("enviarOportuniza");
- enviarOportuniza.onclick = async function() {
+ enviarOportuniza.onclick = async function(event) {
+    event.preventDefault();
 
-    let nomeOportuniza = document.getElementById("nomeOportuniza").value;
-    let data_inicioOportuniza = document.getElementById("data_inicioOportuniza").value;
-    let cnpjOportuniza = document.getElementById("cnpjOportuniza").value;
-    let emailOportuniza = document.getElementById("emailOportuniza").value;
-    let celOportuniza = document.getElementById("celOportuniza").value;
-    let experiênciasOportuniza = document.getElementById("experiênciasOportuniza").value;
-    let senhaOportuniza = document.getElementById("senhaOportuniza").value;
+    let form_oportuniza = document.getElementById("cadastro_oportuniza");
+    let dadosForm = new FormData(form_oportuniza);
+
     let danca = document.getElementById("dançaOportuniza").value;
     let musica = document.getElementById("musicaOportuniza").value;
     let teatro = document.getElementById("teatroOportuniza").value;
     let areaOportuniza = ""
     if (danca === "on" + teatro === "on" + musica === "on") {
-        areaOportuniza = danca + teatro + musica;
+        areaOportuniza = "danca" + "teatro" + "musica";
     } else if (danca === "on" + teatro === "on") {
-        areaOportuniza = danca + teatro;
+        areaOportuniza = "danca" + "teatro";
     } else if (teatro === "on" + musica === "on") {
-        areaOportuniza = teatro + musica;
+        areaOportuniza = "teatro" + "musica";
     } else if (danca === "on" + musica === "on") {
-        areaOportuniza = danca + musica;
+        areaOportuniza = "danca" + "musica";
     } else if (danca === "on") {
-        areaOportuniza = danca;
+        areaOportuniza = "danca";
     } else if (teatro == "on") {
-        areaOportuniza = teatro;
+        areaOportuniza = "teatro";
     } else {
-        areaOportuniza = musica;
+        areaOportuniza = "musica";
     }
-
-
-    let docOportuniza = document.getElementById("docOportuniza").value;
-    let data = {nomeOportuniza, data_inicioOportuniza, cnpjOportuniza, emailOportuniza, celOportuniza, experiênciasOportuniza, senhaOportuniza, areaOportuniza, docOportuniza};
+    dadosForm.append('areaOportuniza', areaOportuniza);
 
     const response = await fetch('http://localhost:3003/api/oportuniza/create', {
         method: "POST",
-        headers: {"Content-type": "application/json;charset=UTF-8"},
-        body: JSON.stringify(data)
+        body: dadosForm
     });
 
     let content = await response.json();
@@ -85,20 +78,21 @@ enviarOportunizado.onclick = async function(event) {
     let musica = document.getElementById("musicaOportuniza").value;
     let teatro = document.getElementById("teatroOportuniza").value;
     let areaOportunizado = ""
+
     if (danca === "on" + teatro === "on" + musica === "on") {
-        areaOportunizado = danca + teatro + musica;
+        areaOportunizado = "danca" + "teatro" + "musica";
     } else if (danca === "on" + teatro === "on") {
-        areaOportunizado = danca + teatro;
+        areaOportunizado = "danca" + "teatro";
     } else if (teatro === "on" + musica === "on") {
-        areaOportunizado = teatro + musica;
+        areaOportunizado = "teatro" + "musica";
     } else if (danca === "on" + musica === "on") {
-        areaOportunizado = danca + musica;
+        areaOportunizado = "danca" + "musica";
     } else if (danca === "on") {
-        areaOportunizado = danca;
+        areaOportunizado = "danca";
     } else if (teatro == "on") {
-        areaOportunizado = teatro;
+        areaOportunizado = "teatro";
     } else {
-        areaOportunizado = musica;
+        areaOportunizado = "musica";
     }
     dadosForm.append('areaOportunizado', areaOportunizado);
 
@@ -110,9 +104,11 @@ enviarOportunizado.onclick = async function(event) {
 
    let content = await response.json();
 
-   if(content.sucess) {
+   if(content.success) {
        alert("Sucesso")
    } else {
        alert("Não");
    }
+
+   
 };
