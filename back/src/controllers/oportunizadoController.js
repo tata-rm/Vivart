@@ -36,7 +36,7 @@ async function storeOportunizado(request, response) {
             request.body.nomeOportunizado,
             request.body.data_nascOportunizado,
             request.body.cpfOportunizado,
-            request.body.celularOportunizado,
+            request.body.celOportunizado,
             request.body.senhaOportunizado,
             request.body.emailOportunizado,
             request.body.experienciasOportunizado,
@@ -46,7 +46,7 @@ async function storeOportunizado(request, response) {
 
         console.log(params)
         
-        const query = "INSERT INTO cadastro_oportunizado(nomeOportunizado, data_nascOportunizado, cpfOportunizado, celularOportunizado, senhaOportunizado, emailOportunizado, experienciasOportunizado, areaOportunizado, documentoNome) VALUES(?,?,?,?,?,?,?,?,?)";
+        const query = "INSERT INTO cadastro_oportunizado(nome, data_nasc, cpf, celular, senha, email, texto, area, documento1) VALUES(?,?,?,?,?,?,?,?,?)";
 
         connection.query(query, params, (err, results) => {
             if(results) {
