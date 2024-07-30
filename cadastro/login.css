@@ -1,0 +1,55 @@
+:root{
+    --lilas-escuro: #2F0836;
+    --lilas-claro: #875790;
+    --lilas: #5F3467;
+    --cinza-escuro: #655D64;
+    --cinza: #D9D9D9;
+    --cor-de-fundo: #F4F1EC;
+    --fundo-opções: #D3C8D1;
+}
+
+.grenze-regular {
+    font-family: "Grenze", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+*{
+    background-color: var(--cor-de-fundo);
+    overflow: hidden;
+}
+body {
+    margin: 0;
+}
+
+#Voltar{
+    color: var(--lilas-escuro);
+    font-family: "Grenze", sans-serif;
+    font-size: 23px;
+    margin-left: 8%;
+    align-items: baseline;
+    cursor: pointer;
+    background-color: var(--fundo-opções);
+    width: 5%;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid var(--lilas);
+    box-shadow: var(--lilas) 5px 5px 10px;
+    margin-top: 2%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 30%;
+}
+
+header a{
+    width: 20%;
+}
+
+header img{
+    width: 90%;
+}

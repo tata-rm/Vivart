@@ -22,12 +22,27 @@ body {
     margin: 0;
 }
 
+#Voltar{
+    color: var(--lilas-escuro);
+    font-family: "Grenze", sans-serif;
+    font-size: 23px;
+    margin-left: 3%;
+    align-items: baseline;
+    cursor: pointer;
+    background-color: var(--fundo-opções);
+    width: 5%;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid var(--lilas);
+    box-shadow: var(--lilas) 5px 5px 10px;
+    margin-top: 2%;
+}
+
 header{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 5%;
     height: 30%;
 }
 
@@ -44,15 +59,31 @@ header img{
     width: 100%;
     z-index: 1;
     position: absolute;
+    flex-direction: column;
+}
+
+#login{
+    align-items: center;
+    color: var(--lilas);
+    font-family: "Grenze", sans-serif;
+    font-size: 23px;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    margin-top: 2vh;
+}
+
+#login:hover{
+    text-shadow: var(--lilas) 3px 3px 6px;
 }
 
 #p{
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 20vh;
+    height: 12vh;
     margin-bottom: 2vh;
-    align-items: center;
+    align-items: flex-end;
     font-family: "Grenze", sans-serif;
     color: var(--lilas);
     font-size: 23px;
@@ -201,9 +232,14 @@ input[type="date" i] {
         height: 65vh;
         justify-content: space-evenly;
     }
+    #Voltar{
+        width: 18%;
+        font-size: 18px;
+        margin-top: 5%;
+    }
     
     header{
-        margin-top: 10%;
+        margin-top: 5%;
         height: 10%;
     }
 
@@ -219,13 +255,14 @@ input[type="date" i] {
     #p{
         height: 10vh;
         margin-top: 2vh;
+        font-size: 20px;
     }
     
     .main{
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        height: 75%;
+        height: 65%;
         margin-top: 0;
     }
     
