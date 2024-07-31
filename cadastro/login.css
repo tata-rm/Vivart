@@ -30,7 +30,7 @@ body {
     align-items: baseline;
     cursor: pointer;
     background-color: var(--fundo-opções);
-    width: 5%;
+    width: 6%;
     text-align: center;
     border-radius: 5px;
     border: 1px solid var(--lilas);
@@ -52,4 +52,62 @@ header a{
 
 header img{
     width: 90%;
+}
+
+main{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5vh 35% 5vh 35%;
+    background-color: var(--cinza);
+    border-radius: 10px;
+    border: 1px solid var(--lilas-claro);
+    box-shadow: var(--lilas-claro) 5px 5px 10px;
+}
+
+#login_opcoes{
+    margin-top: 5vh;
+    font-family: "Grenze", sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: var(--fundo-opções);
+    color: var(--lilas);
+    border: 1px solid var(--lilas-claro);
+
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    font-family: "Grenze", sans-serif;
+    font-size: 20px;
+    z-index: -1;
+}
+.login input{
+    font-family: "Grenze", sans-serif;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: var(--cinza);
+    border: 1px solid var(--lilas-claro);
+    margin: 2vh;
+}
+
+@media screen and (max-width: 600px) {
+    #Voltar{
+        width: 18%;
+        font-size: 18px;
+        margin-top: 5%;
+    }
+    header{
+        margin-top: 5%;
+        height: 8%;
+    }
+    header a{
+        width: 40%;
+    }
+    header img{
+        width: 100%;
+        margin-right: 3%;
+    }
 }

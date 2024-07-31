@@ -30,7 +30,7 @@ body {
     align-items: baseline;
     cursor: pointer;
     background-color: var(--fundo-opções);
-    width: 5%;
+    width: 6%;
     text-align: center;
     border-radius: 5px;
     border: 1px solid var(--lilas);
@@ -225,7 +225,27 @@ input[type="date" i] {
     cursor: pointer;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-height: 1400px) {
+    #but_oportuniza{
+        height: 30vh;
+    }
+
+    #but_oportunizado{
+        height: 30vh;
+    }
+    #titulo-opções{
+        font-size: 22px;
+        margin-top: 2%;
+    }
+    
+    .texto-opções{
+        font-size: 18px;
+        margin-left: 4%;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
     
     .main{
         width: 100%;
@@ -240,7 +260,7 @@ input[type="date" i] {
     
     header{
         margin-top: 5%;
-        height: 10%;
+        height: 8%;
     }
 
     header a{
@@ -253,7 +273,7 @@ input[type="date" i] {
     }
     
     #p{
-        height: 10vh;
+        height: 4vh;
         margin-top: 2vh;
         font-size: 20px;
     }
@@ -296,7 +316,7 @@ input[type="date" i] {
         margin-top: 0%;
         flex-direction: column;
         justify-content: center;
-        height: 95%;
+        height: 85%;
         align-items: center;
     }
 
@@ -304,7 +324,7 @@ input[type="date" i] {
         margin-top: 0%;
         flex-direction: column;
         justify-content: center;
-        height: 95%;
+        height: 85%;
         align-items: center;
     }
 
