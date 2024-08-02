@@ -3,20 +3,22 @@ const opcoes_oportuniza = document.getElementById("opcoes_oportuniza");
 const login_oportunizado = document.getElementById("login_oportunizado");
 const login_oportuniza = document.getElementById("login_oportuniza");
 
-opcoes_oportunizado.addEventListener("click", function(event) {
-    login_oportunizado.style.zIndex = "2";
-    event.stopPropagation();
-});
+const login_opcoes = document.getElementById("login_opcoes");
 
-opcoes_oportuniza.addEventListener("click", function(event){
-    login_oportuniza.style.zIndex = "2";
-    event.stopPropagation();
-})
+login_opcoes.addEventListener("change", function(event) {
+    if(login_opcoes.value == "oportuniza") {
+        login_oportuniza.style.display = "flex";
+        login_oportunizado.style.display = "none";
+
+    } else if(login_opcoes.value == "oportunizado") {
+        login_oportunizado.style.display = "flex";
+        login_oportuniza.style.display = "none";
+    }
+});
 
 /*---------------------------------------------------------------*/
 
 async function getOportuniza() {
-
     const data = {cnpj: '12345678901234', senha: 'tata'}
 
     const response = fetch('http://localhost:3005/api/login', {
@@ -34,4 +36,3 @@ async function getOportuniza() {
     }
 }
 
-let call = getOportuniza();
