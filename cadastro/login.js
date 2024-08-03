@@ -18,12 +18,19 @@ login_opcoes.addEventListener("change", function(event) {
 
 /*---------------------------------------------------------------*/
 
-async function getOportuniza() {
-    const data = {cnpj: '12345678901234', senha: 'tata'}
+const button_oportuniza = document.getElementById("button_oportuniza");
+const button_oportunizado = document.getElementById("button_oportunizado");
 
-    const response = fetch('http://localhost:3005/api/login', {
+button_oportunizado.onclick = async function(event) {
+
+    let cpf = document.getElementById("cpf").value;
+    let senha_oportunizado = document.getElementById("senha_oportunizado").value;
+
+    let data = {cpf, senha_oportunizado}
+
+    const response = await fetch('http://localhost:3003/api/loginOportunizado', {
         method: "POST",
-        headers: {"Content-Type": "application/js"},
+        headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)
     });
 

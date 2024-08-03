@@ -35,19 +35,19 @@ but_oportunizado.addEventListener("click", function() {
     let teatro = document.getElementById("teatroOportuniza").value;
     let areaOportuniza = ""
     if (danca === "on" + teatro === "on" + musica === "on") {
-        areaOportuniza = "danca" + "teatro" + "musica";
+        areaOportuniza = "dança" + "teatro" + "música";
     } else if (danca === "on" + teatro === "on") {
-        areaOportuniza = "danca" + "teatro";
+        areaOportuniza = "dança" + "teatro";
     } else if (teatro === "on" + musica === "on") {
-        areaOportuniza = "teatro" + "musica";
+        areaOportuniza = "teatro" + "música";
     } else if (danca === "on" + musica === "on") {
-        areaOportuniza = "danca" + "musica";
+        areaOportuniza = "dança" + "musica";
     } else if (danca === "on") {
-        areaOportuniza = "danca";
+        areaOportuniza = "dança";
     } else if (teatro == "on") {
         areaOportuniza = "teatro";
     } else {
-        areaOportuniza = "musica";
+        areaOportuniza = "música";
     }
     dadosForm.append('areaOportuniza', areaOportuniza);
 
@@ -63,7 +63,7 @@ but_oportunizado.addEventListener("click", function() {
     } else {
         alert("Não");
     }
-}
+};
 
 /*----------------------------------------------------------------*/
 
@@ -80,19 +80,19 @@ enviarOportunizado.onclick = async function(event) {
     let areaOportunizado = ""
 
     if (danca === "on" + teatro === "on" + musica === "on") {
-        areaOportunizado = "danca" + "teatro" + "musica";
+        areaOportunizado = "dança" + "teatro" + "música";
     } else if (danca === "on" + teatro === "on") {
-        areaOportunizado = "danca" + "teatro";
+        areaOportunizado = "dança" + "teatro";
     } else if (teatro === "on" + musica === "on") {
-        areaOportunizado = "teatro" + "musica";
+        areaOportunizado = "teatro" + "música";
     } else if (danca === "on" + musica === "on") {
-        areaOportunizado = "danca" + "musica";
+        areaOportunizado = "dança" + "música";
     } else if (danca === "on") {
-        areaOportunizado = "danca";
+        areaOportunizado = "dança";
     } else if (teatro == "on") {
         areaOportunizado = "teatro";
     } else {
-        areaOportunizado = "musica";
+        areaOportunizado = "música";
     }
     dadosForm.append('areaOportunizado', areaOportunizado);
 
@@ -106,6 +106,7 @@ enviarOportunizado.onclick = async function(event) {
 
    if(content.success) {
        alert("Sucesso")
+       window.location.href = "login.html"
    } else {
        alert("Não");
    }

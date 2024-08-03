@@ -75,6 +75,7 @@ header{
 
 .perfil{
     width: 55%;
+    cursor: pointer;
     border: none;
 }
 
