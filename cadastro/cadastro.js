@@ -60,6 +60,7 @@ but_oportunizado.addEventListener("click", function() {
 
     if(content.success) {
         alert("Sucesso")
+        window.location.href = "login.html"
     } else {
         alert("Não");
     }
