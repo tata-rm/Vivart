@@ -13,7 +13,7 @@ const escolasRouter = require('./routes/escolasRouter');
 const oportunizaRouter = require('./routes/oportunizaRouter');
 const oportunizadoRouter = require('./routes/oportunizadoRouter');
 const loginOportunizaRouter = require('./routes/loginOportunizaRouter');
-const loginOportunizadoRouter = require('./routes/loginOportunizaRouter');
+const loginOportunizadoRouter = require('./routes/loginOportunizadoRouter');
 
 app.set('port', process.env.PORT || 3005);
 app.use(express.json());
