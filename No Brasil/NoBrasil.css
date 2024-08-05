@@ -85,6 +85,7 @@ header{
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    font-size: 60px;
 }
 
 #mapeia{
@@ -125,7 +126,7 @@ header input{
     font-size: 20px;
 }
 
-@media screen and (max-height: 1400px) {
+@media screen and (max-width: 1400px) {
     .titulo-paginas{
         height: 40vh;
     }

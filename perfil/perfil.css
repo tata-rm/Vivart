@@ -124,3 +124,18 @@ header input{
     font-family: "Grenze", sans-serif;
     font-size: 20px;
 }
+
+@media screen and (max-width: 1400px) {
+    .titulo-paginas{
+        height: 40vh;
+    }
+
+    #overlay a{
+        font-size: 45px;
+        text-shadow: var(--lilas-escuro) -3px 4px 4px;
+        text-align: center;
+    }
+    .perfil{
+        width: 60%;
+    }
+}

@@ -37,9 +37,30 @@ button_oportunizado.onclick = async function(event) {
     const result = await response.json();
 
     if(result.sucess) {
-        alert(result.message)
+        window.location.href = "perfil.html"
     } else {
         alert(result.message)
     }
 }
 
+button_oportunizado.onclick = async function(event) {
+
+    let cpf = document.getElementById("cnpj").value;
+    let senha_oportunizado = document.getElementById("senha_oportuniza").value;
+
+    let data = {cnpj, senha_oportuniza}
+
+    const response = await fetch('http://localhost:3003/api/loginOportunizado', {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if(result.sucess) {
+        window.location.href = "perfil.html"
+    } else {
+        alert(result.message)
+    }
+}

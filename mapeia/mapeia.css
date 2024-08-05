@@ -204,7 +204,7 @@ header input{
 
 /*-----------------------------------------------------------------------*/
 
-@media screen and (max-height: 1400px) {
+@media screen and (max-width: 1400px) {
     .titulo-paginas{
         height: 40vh;
     }

@@ -34,13 +34,13 @@ but_oportunizado.addEventListener("click", function() {
     let musica = document.getElementById("musicaOportuniza").value;
     let teatro = document.getElementById("teatroOportuniza").value;
     let areaOportuniza = ""
-    if (danca === "on" + teatro === "on" + musica === "on") {
+    if (danca === "on" && teatro === "on" && musica === "on") {
         areaOportuniza = "dança" + "teatro" + "música";
-    } else if (danca === "on" + teatro === "on") {
+    } else if (danca === "on" && teatro === "on") {
         areaOportuniza = "dança" + "teatro";
-    } else if (teatro === "on" + musica === "on") {
+    } else if (teatro === "on" && musica === "on") {
         areaOportuniza = "teatro" + "música";
-    } else if (danca === "on" + musica === "on") {
+    } else if (danca === "on" && musica === "on") {
         areaOportuniza = "dança" + "musica";
     } else if (danca === "on") {
         areaOportuniza = "dança";
@@ -59,7 +59,6 @@ but_oportunizado.addEventListener("click", function() {
     let content = await response.json();
 
     if(content.success) {
-        alert("Sucesso")
         window.location.href = "login.html"
     } else {
         alert("Não");
@@ -80,13 +79,13 @@ enviarOportunizado.onclick = async function(event) {
     let teatro = document.getElementById("teatroOportuniza").value;
     let areaOportunizado = ""
 
-    if (danca === "on" + teatro === "on" + musica === "on") {
+    if (danca === "on" && teatro === "on" && musica === "on") {
         areaOportunizado = "dança" + "teatro" + "música";
-    } else if (danca === "on" + teatro === "on") {
+    } else if (danca === "on" && teatro === "on") {
         areaOportunizado = "dança" + "teatro";
-    } else if (teatro === "on" + musica === "on") {
+    } else if (teatro === "on" && musica === "on") {
         areaOportunizado = "teatro" + "música";
-    } else if (danca === "on" + musica === "on") {
+    } else if (danca === "on" && musica === "on") {
         areaOportunizado = "dança" + "música";
     } else if (danca === "on") {
         areaOportunizado = "dança";
@@ -106,10 +105,9 @@ enviarOportunizado.onclick = async function(event) {
    let content = await response.json();
 
    if(content.success) {
-       alert("Sucesso")
-       window.location.href = "login.html"
+        window.location.href = "login.html"
    } else {
-       alert("Não");
+        alert("Não");
    }
 
    
