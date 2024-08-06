@@ -16,6 +16,8 @@ document.addEventListener("click", function() {
     overlay.style.zIndex = "-1";
 });
 
+/*---------------------------------------------------*/
+
 const button = document.getElementById('buscar');
 const selectCidade = document.getElementById('cidade');
 

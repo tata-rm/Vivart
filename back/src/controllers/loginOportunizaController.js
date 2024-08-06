@@ -17,15 +17,42 @@ async function loginOportuniza(request, response) {
                 })
             } else {
                 response.status(400).json({
-                    sucess: false,
+                    success: false,
                     message: "Senha incorreta!",
                     data: err
                 })
             }
+        } else {
+            response.status(400).json({
+                success: false,
+                message: "Senha incorreta!",
+                data: err
+            })
+        }
+    })
+}
+
+async function getOportuniza(request, response) {
+    const query = "SELECT * FROM cadastro_oportuniza";
+
+    connection.query(query, (err, result) => {
+        if(result) {
+            response.status(200).json({
+                success: true,
+                message: "Sucesso!",
+                data: result
+            })
+        } else {
+            response.status(400).json({
+                success: false,
+                message: "Senha incorreta!",
+                data: err
+            })
         }
     })
 }
 
 module.exports = {
-    loginOportuniza
+    loginOportuniza,
+    getOportuniza
 };
