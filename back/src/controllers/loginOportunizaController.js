@@ -3,7 +3,7 @@ const connection = require('../config/db');
 async function loginOportuniza(request, response) {
     const cnpj = Array(request.body.cnpj);
 
-    const query = "SELECT cnpj, senha, created_at FROM cadastro_oportuniza WHERE cnpj = ?";
+    const query = "SELECT cnpj, senha FROM cadastro_oportuniza WHERE cnpj = ?";
 
     connection.query(query, cnpj, (err, results) => {
         if(results.length > 0) {

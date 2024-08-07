@@ -4,7 +4,7 @@ use vivart;
 
 create table cadastro_oportunizado(
 	tipo enum("Oportuniza", "Oportunizado"),
-    area enum("dança", "teatro", "musical"),
+    area varchar(255),
 	nome varchar(255) not null,
     data_nasc date not null,
     cpf varchar(11) primary key not null,
@@ -12,16 +12,14 @@ create table cadastro_oportunizado(
     senha varchar(255) not null,
     email varchar(255) unique not null,
     texto varchar(255),
-    documento1 varchar(255),
-    documento2 varchar(255),
-    documento3 varchar(255)
+    documento1 varchar(255)
 );
-
 select * from cadastro_oportunizado;
+drop table cadastro_oportunizado;
 
 create table cadastro_oportuniza(
 	tipo enum("Oportuniza", "Oportunizado"),
-    area enum("dança", "teatro", "musical"),
+    area varchar(255),
 	nome varchar(255) not null,
     data_inicio date not null,
     cnpj varchar(14) primary key not null,
@@ -29,11 +27,10 @@ create table cadastro_oportuniza(
     senha varchar(255) not null,
     email varchar(255) unique not null,
     texto varchar(255),
-    documento1 varchar(255),
-    documento2 varchar(255),
-    documento3 varchar(255)
+    documento1 varchar(255)
 );
 select * from cadastro_oportuniza;
+drop table cadastro_oportuniza;
 
 
 create table livros(
@@ -232,4 +229,5 @@ VALUES
     ('Chaussard Estudio de Dança - Ipiranga', 'Sapucaia'),
     ('GROSS Estúdio de Dança', 'Sapucaia'),
     ('Escola de Dança Simone Carvalho', 'Triunfo');
+
 

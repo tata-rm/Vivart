@@ -3,7 +3,7 @@ const connection = require('../config/db');
 async function loginOportunizado(request, response) {
     const cpf = Array(request.body.cpf);
 
-    const query = "SELECT cpf, senha, created_at FROM cadastro_oportunizado WHERE cpf = ?";
+    const query = "SELECT cpf, senha FROM cadastro_oportunizado WHERE cpf = ?";
 
     connection.query(query, cpf, (err, results) => {
         if(results.length > 0) {
