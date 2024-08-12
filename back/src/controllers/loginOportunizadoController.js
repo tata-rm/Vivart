@@ -3,7 +3,7 @@ const connection = require('../config/db');
 async function loginOportunizado(request, response) {
     const cpf = Array(request.body.cpf);
 
-    const query = "SELECT cpf, senha FROM cadastro_oportunizado WHERE cpf = ?";
+    const query = "SELECT * FROM cadastro_oportunizado WHERE cpf = ?";
 
     connection.query(query, cpf, (err, results) => {
         if(results.length > 0) {
@@ -13,7 +13,7 @@ async function loginOportunizado(request, response) {
                 response.status(200).json({
                     success: true,
                     message: "Sucesso!",
-                    data: results
+                    data: results[0]
                 })
             } else {
                 response.status(400).json({
@@ -40,7 +40,7 @@ async function getOportunizado(request, response) {
             response.status(200).json({
                 success: true,
                 message: "Sucesso!",
-                data: result
+                data: result[0]
             })
         } else {
             response.status(400).json({
