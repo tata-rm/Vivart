@@ -152,6 +152,11 @@ header input{
     .perfil{
         width: 60%;
     }
+    #img_perfil{
+        width: 280px;
+        height: 280px;
+        margin: 30px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -193,5 +198,9 @@ header input{
         border-radius: 6px;
         margin-top: 3%;
         font-size: 15px;
+    }
+    #img_perfil{
+        width: 200px;
+        height: 200px;
     }
 }
