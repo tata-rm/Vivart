@@ -18,26 +18,31 @@ document.addEventListener("click", function() {
 /*---------------------------------------------------*/
 
 async function getPerfil(event) {
-    event.preventDefault();
 
     //rota get
     let cpf = localStorage.getItem('cpfUser');
 
     let data = {cpf}
 
-    const response = fetch("", {
+    const response = fetch("http://localhost:3003/api/oportunizado/create", {
         method: "POST",
         headers: {
-
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
     });
 
+    const result = await response.json();
+    //console.log(result)
 
-    let html = document.getElementById("");
+    if(result.success) {
+        let html = document.getElementById("info_perfil");
 
-    let card = "<div>" + perfil.nome + "</div>";
-
-    html.innerHTML = card;
+        let nome = "<p>" + perfil.nome + "</p>";
+    
+        html.innerHTML = nome;
+    } else {
+        alert(result.message)
+    }
 }
 getPerfil();
