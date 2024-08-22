@@ -4,6 +4,6 @@ const router = express.Router();
 const { loginOportunizado, getOportunizado } = require("../controllers/loginOportunizadoController");
 
 router.post('/loginOportunizado', loginOportunizado);
-router.get('/getOportunizado', getOportunizado);
+router.get('/getOportunizado/:cpf', getOportunizado);
 
 module.exports = router;
