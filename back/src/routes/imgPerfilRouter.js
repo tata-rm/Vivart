@@ -1,10 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const { atualizarImgPerfil } = require('../controllers/perfilController');
-const multer = require('multer');
+const { Router } = require('express');
+const router = Router();
 
-const upload = multer({ dest: 'uploads/' }); // Define o destino dos arquivos
+const { atualizarImgPerfil } = require('../controllers/imgPerfilController');
 
-router.post('/atualizarImgPerfil', upload.single('fotoPerfil'), atualizarImgPerfil);
+router.post('/atualizarImgPerfil', atualizarImgPerfil);
 
 module.exports = router;

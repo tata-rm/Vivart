@@ -1,36 +1,67 @@
 const path = require('path');
 const fs = require('fs');
+const connection = require('../config/db')
 
-async function atualizarImgPerfil(req, res) {
-    const cpf = req.body.cpf; // Assumindo que o CPF ou ID está sendo enviado
-    const fotoPerfil = req.file;
+const uploadPath = path.join(__dirname, '..', 'imagens_perfil');
+
+if(!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath);
+}
+
+async function atualizarImgPerfil(request, response) {
+    console.log(request.files)
+    const cpf = request.body.cpfUser; 
+    const fotoPerfil = request.files;
 
     if (!fotoPerfil) {
-        return res.status(400).json({
+        return response.status(400).json({
             success: false,
             message: 'Nenhuma foto foi enviada.'
         });
     }
 
-    const fotoPath = path.join(__dirname, '..', 'uploads', fotoPerfil.filename);
+    const foto = request.files.fotoPerfil;
+    console.log(foto)
+    console.log(foto.name)
+    const fotoNome = Date.now() + path.extname(foto.name);
 
-    // Aqui você pode atualizar o caminho da imagem no banco de dados
-    const query = 'UPDATE cadastro_oportunizado SET foto_perfil = ? WHERE cpf = ?';
-    
-    connection.query(query, [fotoPath, cpf], (err, results) => {
-        if (err) {
-            return res.status(500).json({
+
+    foto.mv(path.join(uploadPath,fotoNome), (erro) => {
+        
+        if(erro) {
+            console.log("err?", erro)
+            return response.status(400).json({
                 success: false,
-                message: 'Erro ao atualizar a foto no banco de dados.',
-                sql: err
+                message: "Erro ao mover o arquivo"
             });
         }
 
-        return res.status(200).json({
-            success: true,
-            message: 'Foto de perfil atualizada com sucesso.'
+        const params = Array(
+            fotoNome,
+            cpf
+        );
+        
+        const query = "UPDATE cadastro_oportunizado SET fotoPerfil = ? WHERE cpf = ?"
+        
+        connection.query(query, params, (err, results) => {
+            console.log(err)
+            if (results) {
+                response.status(200).json({
+                    success: true,
+                    message: 'Sucesso',
+                    data: results
+                })
+            } else {
+                response.status(400).json({
+                    success: false,
+                    message: "Sem sucesso!",
+                    data: err
+                })
+            }
         });
     });
 }
 
-module.exports = { atualizarImgPerfil };
+module.exports = { 
+    atualizarImgPerfil 
+}

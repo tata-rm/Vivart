@@ -12,7 +12,7 @@ if(!fs.existsSync(uploadPath)) {
 async function storeOportuniza(request, response) {
 
     if(!request.files) {
-        console.log("sem arq")
+        console.log("sem arquivo")
         return response.status(400).json({
             success: false,
             message: "Você não enviou o arquivo de documento."
