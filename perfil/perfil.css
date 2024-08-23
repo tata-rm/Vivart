@@ -127,7 +127,7 @@ header input{
 
 #i{
     width: 100%;
-    height: 100%;
+    height: 120%;
 }
 
 main{
@@ -154,8 +154,21 @@ main{
     font-family: "Grenze", serif;
     color: var(--cinza-escuro);
     font-size: 20px;
+    padding: 10px;
+    margin: 0px;
+}
+
+#doc p{
+    font-family: "Grenze", serif;
+    color: var(--cinza-escuro);
+    font-size: 20px;
     padding: 0px;
     margin: 0px;
+    text-align: justify;
+}
+#doc{
+    width: 45%;
+
 }
 
 #img_perfil{

@@ -152,4 +152,16 @@ main{
         width: 100%;
         margin-right: 3%;
     }
+    main{
+        width: 80%;
+        margin: 5vh 10% 5vh 10%;
+    }
+    #login_opcoes{
+        margin-top: 5vh;
+        font-size: 25px;
+    }
+    #login_opcoes option{
+        font-size: 15px;
+        width: 50%;
+    }
 }

@@ -28,6 +28,7 @@ function abrirFile() {
 
 mudar_img.addEventListener('change', function() {
     const file = this.files[0];
+    console.log(file)
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -43,8 +44,9 @@ async function enviarImgPerfil() {
     if (file) {
         const formData = new FormData();
         formData.append('fotoPerfil', file); // Adiciona o arquivo à requisição
+        formData.append('cpfUser', localStorage.getItem('cpfUser'))
 
-        const response = await fetch('http://localhost:3003/api/atualizarFotoPerfil', {
+        const response = await fetch('http://localhost:3003/api/atualizarImgPerfil', {
             method: 'POST',
             body: formData
         });
@@ -81,6 +83,11 @@ async function getPerfil(event) {
     if(result.success) {
         let html = document.getElementById("info_perfil");
 
+        if(result.data.fotoPerfil) {
+            let url = "http://localhost:3003/images/";
+            document.getElementById('img_perfil').src = url + result.data.fotoPerfil
+        }
+
         let nome = 
         `<div id="info">
             <div id="p">
@@ -89,7 +96,7 @@ async function getPerfil(event) {
                 <p>${result.data.area}</p>
             </div>
             <div id="doc">
-                <img>${result.data.documento1}</img>
+                <p>${result.data.texto}</p>
             </div>
         </div>`;
 
