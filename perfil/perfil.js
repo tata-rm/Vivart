@@ -20,6 +20,12 @@ document.addEventListener("click", function() {
 const imgPerfil = document.getElementById('img_perfil');
 const mudar_img = document.getElementById('mudar_img');
 
+imgPerfil.style.cursor = "pointer"
+
+function abrirFile() {
+    mudar_img.click();
+}
+
 mudar_img.addEventListener('change', function() {
     const file = this.files[0];
     if (file) {
@@ -54,37 +60,40 @@ async function enviarImgPerfil() {
         alert('Por favor, selecione uma imagem.');
     }
 }
-
-uploadFoto.addEventListener('change', enviarFotoPerfil);
+const uploadFoto = document.getElementById("mudar_img")
+uploadFoto.addEventListener('change', enviarImgPerfil);
 
 /*---------------------------------------------------*/
 
 async function getPerfil(event) {
 
-    //rota get
     let cpf = localStorage.getItem('cpfUser');
 
     let data = {cpf}
 
     const response = await fetch(`http://localhost:3003/api/getOportunizado/${cpf}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        },
-       // body: JSON.stringify(data)
+        method: "GET"
     });
 
     const result = await response.json();
-    //console.log(result)
+    console.log(result)
 
     if(result.success) {
         let html = document.getElementById("info_perfil");
 
-        let nome = `<p>${perfil.nome}</p>`;
-        let email = `<p>${result.data.email}</p>`;
-        let area = `<p>${result.data.area}</p>`;
+        let nome = 
+        `<div id="info">
+            <div id="p">
+                <p>${result.data.nome}</p>
+                <p>${result.data.email}</p>
+                <p>${result.data.area}</p>
+            </div>
+            <div id="doc">
+                <img>${result.data.documento1}</img>
+            </div>
+        </div>`;
 
-        html.innerHTML = nome + email + area;
+        html.innerHTML += nome;
     
     } else {
         alert(result.message)

@@ -35,19 +35,19 @@ but_oportunizado.addEventListener("click", function() {
     let teatro = document.getElementById("teatroOportuniza").value;
     let areaOportuniza = ""
     if (danca === "on" && teatro === "on" && musica === "on") {
-        areaOportuniza = "dança" + "teatro" + "música";
+        areaOportuniza = "Dança, teatro e música";
     } else if (danca === "on" && teatro === "on") {
-        areaOportuniza = "dança" + "teatro";
+        areaOportuniza = "Dança e teatro";
     } else if (teatro === "on" && musica === "on") {
-        areaOportuniza = "teatro" + "música";
+        areaOportuniza = "Teatro e música";
     } else if (danca === "on" && musica === "on") {
-        areaOportuniza = "dança" + "musica";
+        areaOportuniza = "Dança e música";
     } else if (danca === "on") {
-        areaOportuniza = "dança";
+        areaOportuniza = "Dança";
     } else if (teatro == "on") {
-        areaOportuniza = "teatro";
+        areaOportuniza = "Teatro";
     } else {
-        areaOportuniza = "música";
+        areaOportuniza = "Música";
     }
     dadosForm.append('areaOportuniza', areaOportuniza);
 
@@ -80,19 +80,19 @@ enviarOportunizado.onclick = async function(event) {
     let areaOportunizado = ""
 
     if (danca === "on" && teatro === "on" && musica === "on") {
-        areaOportunizado = "dança" + "teatro" + "música";
+        areaOportunizado = "Dança, teatro e música";
     } else if (danca === "on" && teatro === "on") {
-        areaOportunizado = "dança" + "teatro";
+        areaOportunizado = "Dança e teatro";
     } else if (teatro === "on" && musica === "on") {
-        areaOportunizado = "teatro" + "música";
+        areaOportunizado = "Teatro e música";
     } else if (danca === "on" && musica === "on") {
-        areaOportunizado = "dança" + "música";
+        areaOportunizado = "Dança e música";
     } else if (danca === "on") {
-        areaOportunizado = "dança";
+        areaOportunizado = "Dança";
     } else if (teatro == "on") {
-        areaOportunizado = "teatro";
+        areaOportunizado = "Teatro";
     } else {
-        areaOportunizado = "música";
+        areaOportunizado = "Música";
     }
     dadosForm.append('areaOportunizado', areaOportunizado);
 
