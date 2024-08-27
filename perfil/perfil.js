@@ -90,14 +90,10 @@ async function getPerfil(event) {
 
         let nome = 
         `<div id="info">
-            <div id="p">
                 <p>${result.data.nome}</p>
                 <p>${result.data.email}</p>
                 <p>${result.data.area}</p>
-            </div>
-            <div id="doc">
                 <p>${result.data.texto}</p>
-            </div>
         </div>`;
 
         html.innerHTML += nome;
