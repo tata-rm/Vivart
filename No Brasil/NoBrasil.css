@@ -87,6 +87,9 @@ header{
     text-decoration: none;
     font-size: 60px;
 }
+#overlay a:hover{
+    text-shadow: var(--lilas-escuro) -6px 18px 8px;
+}
 
 #mapeia{
     color: var(--mapeia);

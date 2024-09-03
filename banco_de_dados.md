@@ -12,7 +12,8 @@ create table cadastro_oportunizado(
     senha varchar(255) not null,
     email varchar(255) unique not null,
     texto varchar(255),
-    documento1 varchar(255)
+    documento1 varchar(255),
+    fotoPerfil varchar(255)
 );
 select * from cadastro_oportunizado;
 drop table cadastro_oportunizado;

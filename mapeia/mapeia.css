@@ -87,6 +87,10 @@ header{
     text-decoration: none;
 }
 
+#overlay a:hover{
+    text-shadow: var(--lilas-escuro) -6px 18px 8px;
+}
+
 #mapeia{
     color: var(--mapeia);
     font-family: "Berkshire Swash", sans-serif;

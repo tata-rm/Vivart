@@ -87,6 +87,10 @@ header{
     text-decoration: none;
 }
 
+#overlay a:hover{
+    text-shadow: var(--lilas-escuro) -6px 18px 8px;
+}
+
 #mapeia{
     color: var(--mapeia);
     font-family: "Berkshire Swash", sans-serif;
@@ -124,6 +128,79 @@ header input{
     margin-top: 5%;
     font-family: "Grenze", sans-serif;
     font-size: 20px;
+}
+
+#esquerda{
+    width: 30%;
+}
+
+#direita{
+    width: 30%;
+}
+
+#meio{
+    width: 40%;
+    margin-left: 30%;
+    background-color: var(--cinza);
+    margin-top: 0;
+}
+
+#post{
+    width: 90%;
+    margin: 5% 5% 5% 5%;
+    background-color: var(--cinza);
+    border-radius: 3vh;
+    border: 2px var(--cinza-escuro);
+    box-shadow: var(--lilas-escuro) 5px 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#nomeImg{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    background-color: var(--cinza);
+    margin: 0 5% 5% 5%;
+    align-items: center;
+}
+
+#texto{
+    width: 90%;
+    display: flex;
+    text-align: justify;
+    color: var(--cinza-escuro);
+    background-color: var(--cinza);
+    margin: 0 5% 5% 5%;
+}
+
+#imgPerfil{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+#nome{
+    color: var(--lilas-escuro);
+    font-size: 20px;
+    background-color: var(--cinza);
+    margin-left: 3%;
+}
+
+#opcoes{
+    background-color: var(--cinza);
+    font-size: 12px;
+    color: var(--lilas-claro);
+    text-shadow: var(--lilas) 1px 0 1px;
+    margin: 2% 4% 0 5%;
+    display: flex;
+    justify-content: end;
+}
+
+#conteudo{
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    border-radius: 1vh;
 }
 
 /*----------------------------------------------------*/
