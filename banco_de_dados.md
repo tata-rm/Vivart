@@ -33,6 +33,20 @@ create table cadastro_oportuniza(
 select * from cadastro_oportuniza;
 drop table cadastro_oportuniza;
 
+create table post(
+	id int primary key auto_increment,
+	nome varchar(255),
+    tipo varchar(255),
+    fotoPerfil varchar(255),
+    texto varchar(255),
+    img varchar(255),
+    cnpj_cadastro_oportuniza varchar(14),
+    cpf_cadastro_oportunizado varchar(11),
+    foreign key (cnpj_cadastro_oportuniza) references cadastro_oportuniza(cnpj),
+    foreign key (cpf_cadastro_oportunizado) references cadastro_oportunizado(cpf)
+);
+select * from post;
+drop table post;
 
 create table livros(
 	nome varchar(255) primary key,

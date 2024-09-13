@@ -38,6 +38,7 @@ header{
     background-color: var(--lilas);
     margin: 0%;
     padding: 0%;
+    position: fixed;
 }
 
 #logo{
@@ -142,11 +143,13 @@ main{
 
 #info_perfil{
     display: flex;
-    width: 30%;
+    width: 35%;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    margin-left: 70%;
+    position: fixed;
+    height: 80%;
+    margin-left: 65%;
+    margin-top: 20vh;
 }
 
 #info{
@@ -256,9 +259,12 @@ main{
         width: 60%;
     }
     #img_perfil{
-        width: 280px;
-        height: 280px;
-        margin: 30px;
+        width: 260px;
+        height: 260px;
+        margin: 20px;
+    }
+    #info_perfil p{
+        padding: 5px;
     }
 }
 

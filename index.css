@@ -38,6 +38,7 @@ header{
     background-color: var(--lilas);
     margin: 0%;
     padding: 0%;
+    position: fixed;
 }
 
 #logo{
