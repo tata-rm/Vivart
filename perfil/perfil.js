@@ -17,6 +17,25 @@ document.addEventListener("click", function() {
 
 /*---------------------------------------------------*/
 
+const barra = document.getElementById("button_barra");
+const overlay_barra = document.getElementById("overlay_barra");
+
+
+barra.addEventListener("click", function(event) {
+        overlay_barra.style.display = "flex";
+        event.stopPropagation();
+});
+
+overlay_barra.addEventListener("click", function(event){
+    event.stopPropagation();
+})
+ 
+document.addEventListener("click", function() {
+    overlay_barra.style.display = "none";
+});
+
+/*---------------------------------------------------*/
+
 const imgPerfil = document.getElementById('img_perfil');
 const mudar_img = document.getElementById('mudar_img');
 
@@ -46,7 +65,7 @@ async function enviarImgPerfil() {
         formData.append('fotoPerfil', file); // Adiciona o arquivo à requisição
         formData.append('cpfUser', localStorage.getItem('cpfUser'))
 
-        const response = await fetch('http://localhost:3003/api/atualizarImgPerfil', {
+        const response = await fetch('http://localhost:3005/api/atualizarImgPerfil', {
             method: 'POST',
             body: formData
         });
@@ -73,7 +92,7 @@ async function getPerfil(event) {
 
     let data = {cpf}
 
-    const response = await fetch(`http://localhost:3003/api/getOportunizado/${cpf}`, {
+    const response = await fetch(`http://localhost:3005/api/getOportunizado/${cpf}`, {
         method: "GET"
     });
 

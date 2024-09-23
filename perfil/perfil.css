@@ -48,6 +48,48 @@ header{
     margin-left: 1%;
     cursor: pointer;
 }
+#button_barra{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-self: flex-end;
+    border: 0;
+    cursor: pointer;
+    height: 8vh;
+}
+#button_barra:hover{
+    text-shadow: var(--lilas-escuro) -3px 8px 15px;
+}
+
+#overlay_barra{
+    width: 10%;
+    height: 20%;
+    background-color: var(--lilas);
+    display: none;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    margin-top: 39vh;
+    padding: 0%;
+    border-radius: 10px;
+   
+}
+#overlay_barra a{
+    display: flex;
+    background-color: var(--lilas);
+    color: var(--cinza);
+    font-family: "Grenze", serif;
+    font-size: 23px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    
+}
+
+#overlay_barra a:hover{
+    text-shadow: var(--lilas-escuro) -3px 8px 15px;
+}
 
 .hidden{
     display: none;
@@ -183,6 +225,7 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 20vh;
 }
 
 #post{

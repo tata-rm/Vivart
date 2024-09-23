@@ -28,7 +28,7 @@ button_oportunizado.onclick = async function(event) {
 
     let data = {cpf, senha}
 
-    const response = await fetch('http://localhost:3003/api/loginOportunizado', {
+    const response = await fetch('http://localhost:3005/api/loginOportunizado', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)
@@ -52,7 +52,7 @@ button_oportuniza.onclick = async function(event) {
 
     let data = {cnpj, senha}
 
-    const response = await fetch('http://localhost:3003/api/loginOportuniza', {
+    const response = await fetch('http://localhost:3005/api/loginOportuniza', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)

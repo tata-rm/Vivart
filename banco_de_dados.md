@@ -3,7 +3,6 @@ create database vivart;
 use vivart;
 
 create table cadastro_oportunizado(
-	tipo enum("Oportuniza", "Oportunizado"),
     area varchar(255),
 	nome varchar(255) not null,
     data_nasc date not null,
@@ -19,7 +18,6 @@ select * from cadastro_oportunizado;
 drop table cadastro_oportunizado;
 
 create table cadastro_oportuniza(
-	tipo enum("Oportuniza", "Oportunizado"),
     area varchar(255),
 	nome varchar(255) not null,
     data_inicio date not null,

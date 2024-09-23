@@ -51,7 +51,7 @@ but_oportunizado.addEventListener("click", function() {
     }
     dadosForm.append('areaOportuniza', areaOportuniza);
 
-    const response = await fetch('http://localhost:3003/api/oportuniza/create', {
+    const response = await fetch('http://localhost:3005/api/oportuniza/create', {
         method: "POST",
         body: dadosForm
     });
@@ -97,7 +97,7 @@ enviarOportunizado.onclick = async function(event) {
     dadosForm.append('areaOportunizado', areaOportunizado);
 
 
-    const response = await fetch('http://localhost:3003/api/oportunizado/create', {
+    const response = await fetch('http://localhost:3005/api/oportunizado/create', {
        method: "POST",
        body: dadosForm
    });
