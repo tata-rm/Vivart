@@ -1,6 +1,6 @@
-create database vivart;
+create database vivartt;
 
-use vivart;
+use vivartt;
 
 create table cadastro_oportunizado(
     area varchar(255),
