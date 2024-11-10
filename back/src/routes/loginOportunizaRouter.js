@@ -3,7 +3,6 @@ const router = express.Router();
 
 const { loginOportuniza, getOportuniza } = require("../controllers/loginOportunizaController");
 
-
 /**
  * @swagger
  * /oportuniza/login:

@@ -25,10 +25,18 @@
         <img src="../imagens/barra.png" id="button_barra">
 
         <div id="overlay_barra">
-            <a href="">Adicionar postagem</a>
-            <a href="">Editar perfil</a>
+            <button id="openOverlay" onclick="openOverlay()">Adicionar postagem</button>
+            <button onclick="editPerfil()">Editar perfil</button>
         </div>
     </header>
+
+     <!-- Overlay -->
+     <div id="postOverlay" class="postOverlay">
+        <div id="post-container" class="post-container">
+            <textarea id="post-content" placeholder="Escreva algo..."></textarea>
+            <button id="enviarPost">Publicar</button>
+        </div>
+    </div>
     <main>
         <section id="postagens_perfil">
             <div id="post">
@@ -60,8 +68,10 @@
             </div>
         </section>
         <section id="info_perfil">
-            <img src="../imagens/fundo.png" id="img_perfil" onclick="abrirFile()">
-            <input type="file" id="mudar_img" style="display: none;" accept="image/*">
+            <div>
+                <img src="../imagens/fundo.png" id="img_perfil" onclick="abrirFile()">
+                <input type="file" id="mudar_img" style="display: none;" accept="image/*">
+            </div>
         </section>
     </main>
     <script src="perfil.js"></script>

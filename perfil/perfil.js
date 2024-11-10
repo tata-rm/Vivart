@@ -22,8 +22,8 @@ const overlay_barra = document.getElementById("overlay_barra");
 
 
 barra.addEventListener("click", function(event) {
-        overlay_barra.style.display = "flex";
-        event.stopPropagation();
+    overlay_barra.style.display = "flex";
+    event.stopPropagation();
 });
 
 overlay_barra.addEventListener("click", function(event){
@@ -34,6 +34,49 @@ document.addEventListener("click", function() {
     overlay_barra.style.display = "none";
 });
 
+/*---------------------------------------------------*/
+
+const openOverlay = document.getElementById('openOverlay');
+const postOverlay = document.getElementById('postOverlay');
+
+openOverlay.addEventListener('click', function(event) {
+    postOverlay.style.display = 'flex';
+    event.stopPropagation();
+});
+
+overlay_barra.addEventListener("click", function(event){
+    event.stopPropagation();
+})
+
+/*---------------------------------------------------*/
+
+async function addPost() {
+    const content = document.getElementById("post-content").value;
+    
+    if (content.trim()) {
+      const response = await fetch('/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content })
+      });
+  
+      if (response.ok) {
+        document.getElementById("post-content").value = ""; // Limpar o campo
+        loadPosts(); // Atualizar o feed com a nova postagem
+      }
+    } else {
+      alert("Por favor, escreva algo antes de publicar.");
+    }
+  }
+  
+  async function loadPosts() {
+    const response = await fetch('/api/posts');
+    const posts = await response.json();
+  
+    const feed = document.getElementById("feed");
+    feed.innerHTML = posts.map(post => `<p>${post.content}</p>`).join('');
+  }
+  
 /*---------------------------------------------------*/
 
 const imgPerfil = document.getElementById('img_perfil');

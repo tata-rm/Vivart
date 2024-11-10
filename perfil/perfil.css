@@ -56,26 +56,26 @@ header{
     border: 0;
     cursor: pointer;
     height: 8vh;
+    z-index: 2;
 }
 #button_barra:hover{
     text-shadow: var(--lilas-escuro) -3px 8px 15px;
 }
 
 #overlay_barra{
-    width: 10%;
-    height: 20%;
+    width: 13%;
+    height: 230px;
     background-color: var(--lilas);
     display: none;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    margin-top: 39vh;
+    margin-top: 50vh;
     padding: 0%;
     border-radius: 10px;
-   
 }
-#overlay_barra a{
+#overlay_barra button{
     display: flex;
     background-color: var(--lilas);
     color: var(--cinza);
@@ -84,16 +84,47 @@ header{
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    
+    border: none;
 }
 
-#overlay_barra a:hover{
+#overlay_barra button:hover{
     text-shadow: var(--lilas-escuro) -3px 8px 15px;
 }
 
 .hidden{
     display: none;
 }
+
+.postOverlay {
+    position: fixed;
+    width: 75%;
+    height: 70%;
+    background-color: var(--cinza);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 1000;
+}
+  
+  /* Estilo da div post-container */
+  .post-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* Botão para fechar o overlay (opcional) */
+  #close-overlay-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
 
 #overlay{
     width: 18%;
@@ -192,6 +223,7 @@ main{
     height: 80%;
     margin-left: 65%;
     margin-top: 20vh;
+    overflow-y: auto;
 }
 
 #info{
