@@ -25,17 +25,20 @@
         <img src="../imagens/barra.png" id="button_barra">
 
         <div id="overlay_barra">
-            <button id="openOverlay" onclick="openOverlay()">Adicionar postagem</button>
+            <button id="openOverlay">Adicionar postagem</button>
             <button onclick="editPerfil()">Editar perfil</button>
         </div>
+
     </header>
 
      <!-- Overlay -->
      <div id="postOverlay" class="postOverlay">
-        <div id="post-container" class="post-container">
-            <textarea id="post-content" placeholder="Escreva algo..."></textarea>
+            <button id="fecharOverlay" onclick="fecharOverlay()">X</button>
+            <div id="camposPost">
+                <input type="text" id="inputOverlay" placeholder="Escreva algo..."></input>
+                <input type="file" placeholder="Documento" id="docOportuniza" name="docOportuniza">
+            </div>
             <button id="enviarPost">Publicar</button>
-        </div>
     </div>
     <main>
         <section id="postagens_perfil">

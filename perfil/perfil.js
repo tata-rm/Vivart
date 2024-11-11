@@ -37,6 +37,7 @@ document.addEventListener("click", function() {
 /*---------------------------------------------------*/
 
 const openOverlay = document.getElementById('openOverlay');
+const fecharOverlay = document.getElementById('fecharOverlay');
 const postOverlay = document.getElementById('postOverlay');
 
 openOverlay.addEventListener('click', function(event) {
@@ -44,7 +45,8 @@ openOverlay.addEventListener('click', function(event) {
     event.stopPropagation();
 });
 
-overlay_barra.addEventListener("click", function(event){
+fecharOverlay.addEventListener("click", function(event){
+    postOverlay.style.display = 'none';
     event.stopPropagation();
 })
 

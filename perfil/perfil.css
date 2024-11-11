@@ -34,7 +34,7 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 20vh;
+    height: 20%;
     background-color: var(--lilas);
     margin: 0%;
     padding: 0%;
@@ -73,6 +73,7 @@ header{
     position: fixed;
     margin-top: 50vh;
     padding: 0%;
+    right: 0;
     border-radius: 10px;
 }
 #overlay_barra button{
@@ -97,34 +98,61 @@ header{
 
 .postOverlay {
     position: fixed;
-    width: 75%;
+    width: 65%;
     height: 70%;
     background-color: var(--cinza);
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     display: none;
     z-index: 1000;
+    flex-direction: column;
+    border-radius: 0px 30px 30px 30px;
+    border: 1.2px solid var(--lilas);
+    box-shadow: var(--lilas) 8px 5px 10px;
 }
-  
-  /* Estilo da div post-container */
-  .post-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-  }
-  
-  /* Botão para fechar o overlay (opcional) */
-  #close-overlay-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
+.postOverlay button{
+    width: 8%;
+    height: 25px;
+    font-family: "Grenze", sans-serif;
+    color: var(--lilas);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: var(--cinza);
+    border: 1px solid var(--lilas);
     cursor: pointer;
-    border-radius: 4px;
-  }
-  
+    box-shadow: var(--lilas) 1px 1px 5px;
+}
+
+.postOverlay button:hover{
+    box-shadow: var(--lilas) 3px 3px 5px;
+}
+
+#camposPost{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cinza);
+}
+#camposPost input{
+    border: 1.2px solid var(--lilas);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    font-family: "Grenze", sans-serif;
+    color: var(--lilas);
+    font-size: 20px;
+    background-color: var(--cinza);
+    box-shadow: var(--lilas-claro) 3px 3px 5px;
+
+}
+
+#camposPost input:hover{
+    box-shadow: var(--lilas) 3px 3px 5px;
+}
 
 #overlay{
     width: 18%;
@@ -212,6 +240,8 @@ main{
     display: flex;
     flex-direction: row;
     width: 100%;
+    position: absolute;
+    z-index: -1;
 }
 
 #info_perfil{
