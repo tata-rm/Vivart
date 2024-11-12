@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { storePost, retornaPosts } = require('../controllers/postController');
+const { storePost, retornaPosts } = require('../controllers/postagensController');
 
 /**
  * @swagger
