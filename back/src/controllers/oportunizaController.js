@@ -12,7 +12,6 @@ if(!fs.existsSync(uploadPath)) {
 async function storeOportuniza(request, response) {
 
     if(!request.files) {
-        console.log("sem arquivo")
         return response.status(400).json({
             success: false,
             message: "Você não enviou o arquivo de documento."
@@ -49,7 +48,6 @@ async function storeOportuniza(request, response) {
         const query = "INSERT INTO cadastro_oportuniza(area, nome, data_inicio, cnpj, telefone, senha, email, texto, documento1) VALUES(?,?,?,?,?,?,?,?,?)";
         
         connection.query(query, params, (err, results) => {
-
             if(results) {
                 response.status(200).json({
                     success: true,

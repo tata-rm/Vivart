@@ -18,18 +18,28 @@ async function storePost(request, response) {
             message: "Os dados solicitados não foram preenchidos"
         });
     }
-
+    console.log("aqui");
     const imgPost = request.files.imgPost;
     const imgPostNome = Date.now() + path.extname(imgPost.name);
 
     imgPost.mv(path.join(uploadPath, imgPostNome), (erro) => {
+
+        if(erro) {
+            console.log("err?", erro)
+            return response.status(400).json({
+                success: false,
+                message: "Erro ao mover o arquivo"
+            });
+        }
 
     const params = Array(
         request.body.textPost,
         imgPostNome
     );
 
-    const query = "INSERT INTO post(img, texto) VALUES(?,?)";
+    console.log(params)
+
+    const query = "INSERT INTO post(texto, img) VALUES(?,?)";
 
         connection.query(query, params, (err, results) => {
             if(results) {

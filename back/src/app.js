@@ -15,6 +15,8 @@ const oportunizadoRouter = require('./routes/oportunizadoRouter');
 const loginOportunizaRouter = require('./routes/loginOportunizaRouter');
 const loginOportunizadoRouter = require('./routes/loginOportunizadoRouter');
 const imgPerfilRouter = require('./routes/imgPerfilRouter');
+const postagensRouter = require('./routes/postagensRouter');
+
 
 app.set('port', process.env.PORT || 3005);
 app.use(express.json());
@@ -23,11 +25,14 @@ app.use(fileupload());
 
 //habilitar utilização na aplicação:
 app.use('/images', express.static(__dirname + '\\imagens_perfil'));
+app.use('/images', express.static(__dirname + '\\post'));
 app.use('/api', escolasRouter);
 app.use('/api', oportunizaRouter);
 app.use('/api', oportunizadoRouter);
 app.use('/api', loginOportunizaRouter);
 app.use('/api', loginOportunizadoRouter);
 app.use('/api', imgPerfilRouter);
+app.use('/api', postagensRouter);
+
 
 module.exports = app;
