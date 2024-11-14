@@ -10,17 +10,24 @@ if(!fs.existsSync(uploadPath)) {
 }
 
 //Função para adicionar uma nova postagem
-async function storePost(request, response) {    
-
+async function storePost(request, response) {
     if (!request.files) {
-        return res.status(400).json({
+        return response.status(400).json({
             success: false,
             message: "Os dados solicitados não foram preenchidos"
         });
     }
-    console.log("aqui");
+
     const imgPost = request.files.imgPost;
     const imgPostNome = Date.now() + path.extname(imgPost.name);
+
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    if (!allowedTypes.includes(imgPost.mimetype)) {
+        return response.status(400).json({
+            success: false,
+            message: 'Tipo de arquivo inválido. Apenas imagens são permitidas.'
+        });
+    }
 
     imgPost.mv(path.join(uploadPath, imgPostNome), (erro) => {
 
@@ -60,7 +67,7 @@ async function storePost(request, response) {
 }
         
 //Função para retornar todas as postagens:
-async function retornaPosts(req, res) {
+async function retornaPost(req, res) {
     connection.query('SELECT * FROM posts', (err, results) => {
         if (err) {
             console.error('Erro ao executar a consulta:', err);
@@ -78,5 +85,5 @@ async function retornaPosts(req, res) {
 
 module.exports = {
     storePost,
-    retornaPosts
+    retornaPost
 };

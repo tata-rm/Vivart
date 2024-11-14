@@ -39,6 +39,7 @@ button_oportunizado.onclick = async function(event) {
 
     if(result.success) {
         localStorage.setItem('cpfUser', result.data.cpf)
+        localStorage.setItem('usuario', JSON.stringify(result.data))
         window.location.href = "../perfil/perfil.html"
     } else {
         alert(result.message)

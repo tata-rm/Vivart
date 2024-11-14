@@ -53,10 +53,12 @@ fecharOverlay.addEventListener("click", function(event){
 /*---------------------------------------------------*/
 
 async function addPost() {
-    const content = document.getElementById("post-content").value;
-    
+    let usuario = JSON.parse(localStorage.getItem('usuario'))
+    console.log(usuario);
+    //let cpf = usuario.cpf
+    const content = document.getElementById("inputOverlay").value;
     if (content.trim()) {
-      const response = await fetch('/api/posts', {
+      const response = await fetch('http://localhost:3005/api/store/posts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content })
