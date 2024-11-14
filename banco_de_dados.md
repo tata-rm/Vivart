@@ -47,10 +47,11 @@ select * from post;
 drop table post;
 
 create table livros(
-	nome varchar(255) primary key,
-    autor varchar(255),
-    data_lançamento date,
-    quant_páginas int,
+	id int auto_increment primary key not null,
+	nome varchar(255) not null,
+    autor varchar(255) not null,
+    data_lançamento date not null,
+    quant_páginas int not null,
     area enum("dança", "teatro", "musical"),
 	tipo enum("artigo", "livro")
 );
