@@ -9,9 +9,9 @@ if(!fs.existsSync(uploadPath)) {
     fs.mkdirSync(uploadPath);
 }
 
-//Função para adicionar uma nova postagem
 async function storePost(request, response) {
-    if (!request.files) {
+
+    if(!request.files) {
         return response.status(400).json({
             success: false,
             message: "Os dados solicitados não foram preenchidos"
@@ -66,7 +66,7 @@ async function storePost(request, response) {
     });
 }
         
-//Função para retornar todas as postagens:
+/*Função para retornar todas as postagens:
 async function retornaPost(req, res) {
     connection.query('SELECT * FROM posts', (err, results) => {
         if (err) {
@@ -80,10 +80,10 @@ async function retornaPost(req, res) {
             data: results
         });
     });
-}
+}*/
 
 
 module.exports = {
     storePost,
-    retornaPost
+    //retornaPost
 };

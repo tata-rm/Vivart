@@ -55,7 +55,7 @@ header{
     align-self: flex-end;
     border: 0;
     cursor: pointer;
-    height: 8vh;
+    height: 10vh;
     z-index: 2;
 }
 #button_barra:hover{

@@ -24,7 +24,7 @@ const selectCidade = document.getElementById('cidade');
 button.addEventListener('click', async () =>{
     const cidadeSelecionada = selectCidade.value;
 
-    const response = await fetch(`http://localhost:3003/api/get/escolas/${cidadeSelecionada}`);
+    const response = await fetch(`http://localhost:3005/api/get/escolas/${cidadeSelecionada}`);
     const result = await response.json();
     console.log(result);
     if(result.success) {

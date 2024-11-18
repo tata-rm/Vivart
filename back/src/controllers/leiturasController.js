@@ -1,61 +1,39 @@
 const connection = require('../config/db');
 const dotenv = require('dotenv').config();
+const router = express.Router();
 
+// Rota para armazenar dados do livro
+async function livros (req, res) {
+    const { nome, autor, data_lançamento, quant_páginas, area, thumbnail } = req.body;
 
-async function storeLivros(request, response) {
-    const { id_user, id_book, titulo, thumbnail } = request.body; // Obtenha os dados corretos
-    const params = [id_user, id_book, titulo, thumbnail]; // Crie o array com os dados
- 
-    const query = "INSERT INTO livros(id_user, id_book, titulo, thumbnail) VALUES (?, ?, ?, ?)";
-   
+    // Validando se os campos necessários foram preenchidos
+    const params = [
+        nome, 
+        autor || 'Autor desconhecido',
+        data_lançamento || null,
+        quant_páginas || 0,
+        area || 'desconhecida'
+    ];
+
+    const query = "INSERT INTO livros(nome, autor, data_lançamento, quant_páginas, area) VALUES (?, ?, ?, ?, ?)";
+
     connection.query(query, params, (err, results) => {
-        if (results) {
-            response.status(201).json({
-                success: true,
-                message: "Sucesso!",
-                data: results
-            });
-        } else {
-            console.log(err);
-            response.status(400).json({
+        if (err) {
+            console.error(err);
+            return res.status(400).json({
                 success: false,
-                message: "Ops, deu problema!",
-                sql: err
+                message: "Erro ao armazenar livro",
+                error: err
             });
         }
+        res.status(201).json({
+            success: true,
+            message: "Livro cadastrado com sucesso!",
+            data: results
+        });
     });
-}
- 
-async function storeTask(request, response){
-   
-    const params = Array(request.body.idUser, request.body.id, request.body.nome, request.body.thumbnail)
-    console.log(request.body)
- 
-    const query = "INSERT INTO young_favoritos(id_user, id_book, titulo, thumbnail) values(?,?,?,?)";
- 
-    connection.query(query, params, (err, results) => {
-        if(results) {
-            response
-                .status(201)
-                .json({
-                    success: true,
-                    message: "Sucesso!",
-                    data: results
-                })
-        } else {
-            console.log(err)
-            response
-                .status(400)
-                .json({
-                    success: false,
-                    message: "Ops, deu problema!",
-                    sql: err
-                })
-        }
-    })
-}
+};
 
 module.exports = {
-    storeLivros
-}
- 
+    storeTask
+};

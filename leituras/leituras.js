@@ -16,57 +16,10 @@ document.addEventListener("click", function() {
 
 /*---------------------------------------------------*/
 
-function leituras(element, id, nome) {
-    const estrela = element;
-    estrela.classList.toggle('pb');
- 
-    const userId = localStorage.getItem('userId'); // Obtém o ID do usuário
-    console.log(userId);
- 
-    let data = { id_user: userId, id_book: id, titulo: nome }; // Inclui o ID do usuário e do livro
-    console.log(data);
- 
-    fetch(`http://localhost:3003/api/store/book`, { // Altere a URL para a rota correta
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json; charset=UTF-8"
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => response.json())
-        .then(result => {
-            if (result.success) {
-                alert('Tarefa armazenada com sucesso!');
-            } else {
-                alert('Erro ao armazenar a tarefa: ' + result.message);
-            }
-        })
-        .catch(error => console.error('Erro ao armazenar:', error));
-}
- 
-function toggleEstrela(element, id, nome, thumbnail) {
-    let estrela = element;
-    let idUser = localStorage.getItem('userId')
-    // console.log(id)
-    estrela.classList.toggle('pb')
-    let data = { id, idUser, nome, thumbnail };
- 
-    const response = fetch("http://localhost:3003/API/store/book", {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        },
-        body: JSON.stringify(data)
-    });
- 
- 
- 
-}
- 
-function searchBooks() {
-    let searchInput = document.getElementById('searchInput').value;
-    let url = 'https://www.googleapis.com/books/v1/volumes?q=' + encodeURIComponent(searchInput);
- 
+function Leituras() {
+    let pesquisar = document.getElementById('pesquisar').value;
+    let url = 'https://www.googleapis.com/books/v1/volumes?q=' + encodeURIComponent(pesquisar);
+
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -74,42 +27,65 @@ function searchBooks() {
         })
         .catch(error => console.error('Erro ao buscar livros:', error));
 }
- 
+
+function enviarLivro(livro) {
+    const dadosLivro = {
+        nome: livro.volumeInfo.title,
+        autor: livro.volumeInfo.authors ? livro.volumeInfo.authors.join(', ') : 'Autor desconhecido',
+        data_lançamento: livro.volumeInfo.publishedDate || null,
+        quant_páginas: livro.volumeInfo.pageCount || 0,
+        area: livro.volumeInfo.categories ? livro.volumeInfo.categories[0] : 'desconhecida',
+        thumbnail: livro.volumeInfo.imageLinks ? livro.volumeInfo.imageLinks.thumbnail : 'https://via.placeholder.com/150'
+    };
+
+    fetch('https://www.googleapis.com/books/v1/volumes?q=', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dadosLivro),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Livro cadastrado com sucesso!');
+        } else {
+            alert('Erro ao cadastrar o livro.');
+        }
+    })
+    .catch(error => console.error('Erro ao enviar dados:', error));
+}
+
+
 function displayResults(books) {
     let resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';
- 
+
     if (books.length === 0) {
         resultsContainer.innerHTML = 'Nenhum resultado encontrado.';
         return;
     }
- 
+
     books.forEach(book => {
- 
         let id = book.id;
         let title = book.volumeInfo.title;
         let authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'Autor desconhecido';
-        let description = book.volumeInfo.description ? book.volumeInfo.description : 'Descrição indisponível';
+        let data = book.volumeInfo.publishedDate ? book.volumeInfo.publishedDate : 'Data indisponível';
         let thumbnail = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : 'https://via.placeholder.com/150';
-        console.log(`ID DO LIVRO ${title} = ${id}`)
+
         let bookElement = document.createElement('div');
         bookElement.classList.add('book');
         bookElement.innerHTML = `
-            <h2>${title} <img class="estrela pb" onclick="toggleEstrela(this, '${id}', '${title}', '${thumbnail}')" src="../assets/estrela amarela.png" alt=""> </h2>
+            <h2>${title}</h2>
             <img src="${thumbnail}" alt="Capa do Livro">
-            <p><strong>Autores:</strong> ${authors}</p>
-            <p><strong>Descrição:</strong> ${description}</p>
-            <hr>
+            <p>${data}</p>
+            <p>${authors}</p>
         `;
         resultsContainer.appendChild(bookElement);
- 
- 
- 
     });
 }
- 
-const next = document.getElementById("goProfile");
- 
-next.addEventListener('click', () => {
-    window.location.href = "../profile/profile.html";
-});
+
+// Exibir livros pré-definidos ao carregar a página
+window.onload = () => {
+    displayResults(livrosPreDefinidos);
+};

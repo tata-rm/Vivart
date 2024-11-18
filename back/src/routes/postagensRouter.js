@@ -34,7 +34,7 @@ router.post('/store/post', storePost);
  *              type: array
  *              items:
  *                type: object
- */
-router.get('/get/post', retornaPost);
+ *
+router.get('/get/post', retornaPost);*/
 
 module.exports = router;
