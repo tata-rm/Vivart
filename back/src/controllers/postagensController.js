@@ -10,7 +10,7 @@ if(!fs.existsSync(uploadPath)) {
 }
 
 async function storePost(request, response) {
-
+console.log('aqui');
     if(!request.files) {
         return response.status(400).json({
             success: false,

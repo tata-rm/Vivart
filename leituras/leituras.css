@@ -119,17 +119,93 @@ header{
 }
 
 header input{
-    width: 30%;
-    margin-right: 5%;
+    height: 2vh;
     background-color: var(--cinza);
-    height: 3vh;
+    font-family: "Grenze", sans-serif;
+    font-size: 20px;
+    border: none;
+    align-self: center;
+    margin-left: 5%;
+}
+
+
+/*----------------------------------------------------*/
+.procura{
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    flex-direction: row;
+    margin-right: 10%;
+    margin-bottom: 3vh;
+    background-color: var(--cinza);
     border-radius: 10px;
     border: 2px var(--cinza-escuro);
     box-shadow: var(--lilas-escuro) 5px 0 20px;
-    margin-top: 5%;
-    font-family: "Grenze", sans-serif;
-    font-size: 20px;
+    height: 5vh;
+
 }
+
+#lupa{
+    display: flex;
+    right: 25px;
+    border-radius: 30px;
+    height: 3vh;
+    background-color: var(--cinza);
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+#lupa:hover{
+    border: 2px var(--cinza-escuro);
+}
+
+#livros{
+    background-color: var(--cinza);
+    display: block;
+    align-items: center;
+    margin: 10px;
+    justify-content: space-around;
+    font-family: 'Grenze';
+    width: 60%;
+    padding: 0px;
+    justify-content: center;
+    margin-left: 20%;
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#livros h2{
+    font-size: 20px;
+    color: var(--lilas);
+}
+
+#livros p{
+    color: var(--cinza-escuro);
+}
+
+
+.titulo-paginas{
+    font-family: "Berkshire Swash";
+    font-size: 30px;
+    color: var(--leituras);
+    text-shadow: var(--lilas-escuro) -3px 10px 8px;
+    border: 2px var(--lilas-escuro);
+    width: 100%;
+    margin-left: 10%;
+}
+
+main{
+    width: 100%;
+    background-color: var(--cor-de-fundo);
+}
+
 
 /*----------------------------------------------------*/
 

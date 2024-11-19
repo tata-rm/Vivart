@@ -56,9 +56,44 @@ function enviarLivro(livro) {
     .catch(error => console.error('Erro ao enviar dados:', error));
 }
 
+const predefinedBooks = [
+    {
+        id: "1",
+        volumeInfo: {
+            title: "O Senhor dos Anéis",
+            authors: ["J.R.R. Tolkien"],
+            publishedDate: "1954",
+            imageLinks: {
+                thumbnail: "https://via.placeholder.com/150"
+            }
+        }
+    },
+    {
+        id: "2",
+        volumeInfo: {
+            title: "1984",
+            authors: ["George Orwell"],
+            publishedDate: "1949",
+            imageLinks: {
+                thumbnail: "https://via.placeholder.com/150"
+            }
+        }
+    },
+    {
+        id: "3",
+        volumeInfo: {
+            title: "Dom Quixote",
+            authors: ["Miguel de Cervantes"],
+            publishedDate: "1605",
+            imageLinks: {
+                thumbnail: "https://via.placeholder.com/150"
+            }
+        }
+    }
+];
 
 function displayResults(books) {
-    let resultsContainer = document.getElementById('results');
+    let resultsContainer = document.getElementById('livros');
     resultsContainer.innerHTML = '';
 
     if (books.length === 0) {
@@ -83,9 +118,8 @@ function displayResults(books) {
         `;
         resultsContainer.appendChild(bookElement);
     });
-}
 
-// Exibir livros pré-definidos ao carregar a página
-window.onload = () => {
-    displayResults(livrosPreDefinidos);
-};
+    document.addEventListener('DOMContentLoaded', () => {
+        displayResults(predefinedBooks);
+    });
+}

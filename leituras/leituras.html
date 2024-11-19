@@ -20,15 +20,17 @@
     </div>
     <header>
         <img src="../imagens/logovivart.png" id="logo">
-        <input type="text" placeholder="Pesquisar">
-    </header>
-    <main>        
         <div class="procura">
-            <input class="busca" type="text" id="pesquisar" placeholder="Digite o título do livro...">
-            <img src="../assets/lupa.png" alt="" class="botao" onclick="searchBooks()">
+            <input type="text" id="pesquisar" placeholder="Pesquise o título do livro">
+            <img src="../imagens/lupa.png" id="lupa" onclick="Leituras()">
+        </div>
+    </header>
+    <main>
+        <div class="titulo-paginas">
+            <h1>Leituras</h1>
         </div>
 
-        <div id="results"></div>
+        <div id="livros"></div>
     </main>
     <script src="leituras.js"></script>
 </body>
