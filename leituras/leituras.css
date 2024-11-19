@@ -195,10 +195,12 @@ header input{
     font-family: "Berkshire Swash";
     font-size: 30px;
     color: var(--leituras);
-    text-shadow: var(--lilas-escuro) -3px 10px 8px;
-    border: 2px var(--lilas-escuro);
     width: 100%;
     margin-left: 10%;
+    text-shadow: var(--lilas) 8px 0 10px;
+    -webkit-text-stroke: 0.1px var(--lilas);  
+    margin-left: 6%;
+    align-items: baseline;
 }
 
 main{
