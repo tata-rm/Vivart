@@ -60,22 +60,22 @@ const predefinedBooks = [
     {
         id: "1",
         volumeInfo: {
-            title: "O Senhor dos Anéis",
-            authors: ["J.R.R. Tolkien"],
-            publishedDate: "1954",
+            title: "Roube como um artista - 10 dicas sobre criatividade",
+            authors: ["Austin Kleon"],
+            publishedDate: "2013-07-01",
             imageLinks: {
-                thumbnail: "https://via.placeholder.com/150"
+                thumbnail: "http://books.google.com/books/content?id=9SFnAAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
             }
         }
     },
     {
         id: "2",
         volumeInfo: {
-            title: "1984",
-            authors: ["George Orwell"],
-            publishedDate: "1949",
+            title: "DOMÍNIO DO MOVIMENTO",
+            authors: ["Rudolf Laban"],
+            publishedDate: "1978-01-01",
             imageLinks: {
-                thumbnail: "https://via.placeholder.com/150"
+                thumbnail: "http://books.google.com/books/content?id=CrTUihSxx5IC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
             }
         }
     },
@@ -118,8 +118,7 @@ function displayResults(books) {
         `;
         resultsContainer.appendChild(bookElement);
     });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        displayResults(predefinedBooks);
-    });
 }
+document.addEventListener('DOMContentLoaded', () => {
+    displayResults(predefinedBooks);
+});
