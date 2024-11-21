@@ -58,7 +58,7 @@ async function addPost() {
     //let cpf = usuario.cpf
     const content = document.getElementById("inputOverlay").value;
     if (content.trim()) {
-      const response = await fetch('http://localhost:3005/api/store/posts', {
+      const response = await fetch('http://localhost:3005/api/store/post', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content })
