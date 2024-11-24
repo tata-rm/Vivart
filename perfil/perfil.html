@@ -30,14 +30,13 @@
 
     </header>
 
-     <!-- Overlay -->
      <div id="postOverlay" class="postOverlay">
             <button id="fecharOverlay" onclick="fecharOverlay()">X</button>
-            <div id="camposPost">
-                <input type="text" id="inputOverlay" placeholder="Escreva algo..."></input>
+            <form action="#" enctype="multipart/form-data" id="camposPost">
+                <input type="text" id="inputOverlay" name="inputOverlay" placeholder="Escreva algo..."></input>
                 <input type="file" id="imgPost" name="imgPost">
-            </div>
-            <button onclick="addPost()" id="enviarPost">Publicar</button>
+            </form>
+            <button id="enviarPost">Publicar</button>
     </div>
     <main>
         <section id="postagens_perfil">

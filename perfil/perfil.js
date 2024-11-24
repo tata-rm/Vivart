@@ -51,35 +51,34 @@ fecharOverlay.addEventListener("click", function(event){
 })
 
 /*---------------------------------------------------*/
+let enviarPost = document.getElementById('enviarPost');
 
-async function addPost() {
-    let usuario = JSON.parse(localStorage.getItem('usuario'))
-    console.log(usuario);
-    //let cpf = usuario.cpf
-    const content = document.getElementById("inputOverlay").value;
-    if (content.trim()) {
-      const response = await fetch('http://localhost:3005/api/store/post', {
+enviarPost.onclick = async function addPost() {
+    let camposPost = document.getElementById('camposPost');
+    let dadosPost = new formData('camposPost')
+
+    const response = await fetch('http://localhost:3005/api/store/post', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content })
-      });
+        body: dadosPost
+    });
   
-      if (response.ok) {
-        document.getElementById("post-content").value = ""; // Limpar o campo
-        loadPosts(); // Atualizar o feed com a nova postagem
-      }
+
+    let content = await response.json();
+
+    if(content.success) {
+        window.location.href = "login.html"
     } else {
-      alert("Por favor, escreva algo antes de publicar.");
+        alert("Não");
     }
-  }
-  
-  async function loadPosts() {
-    const response = await fetch('/api/posts');
-    const posts = await response.json();
-  
-    const feed = document.getElementById("feed");
-    feed.innerHTML = posts.map(post => `<p>${post.content}</p>`).join('');
-  }
+};
+      //if (response.ok) {
+     //   document.getElementById("post-content").value = ""; // Limpar o campo
+       // loadPosts(); // Atualizar o feed com a nova postagem
+     // }
+   // } else {
+      //alert("Por favor, escreva algo antes de publicar.");
+    //}
+
   
 /*---------------------------------------------------*/
 

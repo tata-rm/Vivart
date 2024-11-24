@@ -23,9 +23,12 @@ app.use(express.json());
 app.use(cors());
 app.use(fileupload());
 
+
+
 //habilitar utilização na aplicação:
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/images', express.static(__dirname + '\\imagens_perfil'));
-app.use('/images', express.static(__dirname + '\\post'));
+app.use('/post', express.static(path.join(__dirname, 'post')));
 app.use('/api', escolasRouter);
 app.use('/api', oportunizaRouter);
 app.use('/api', oportunizadoRouter);

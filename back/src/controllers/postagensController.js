@@ -3,10 +3,10 @@ const dotenv = require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 
-const uploadPath = path.join(__dirname, '..', 'post');
+const uploadPost = path.join(__dirname, '..', 'post');
 
-if(!fs.existsSync(uploadPath)) {
-    fs.mkdirSync(uploadPath);
+if(!fs.existsSync(uploadPost)) {
+    fs.mkdirSync(uploadPost);
 }
 
 async function storePost(request, response) {
@@ -21,15 +21,7 @@ console.log('aqui');
     const imgPost = request.files.imgPost;
     const imgPostNome = Date.now() + path.extname(imgPost.name);
 
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
-    if (!allowedTypes.includes(imgPost.mimetype)) {
-        return response.status(400).json({
-            success: false,
-            message: 'Tipo de arquivo inválido. Apenas imagens são permitidas.'
-        });
-    }
-
-    imgPost.mv(path.join(uploadPath, imgPostNome), (erro) => {
+    imgPost.mv(path.join(uploadPost, imgPostNome), (erro) => {
 
         if(erro) {
             console.log("err?", erro)
@@ -39,14 +31,14 @@ console.log('aqui');
             });
         }
 
-    const params = Array(
-        request.body.textPost,
-        imgPostNome
-    );
+        const params = Array(
+            request.body.textPost,
+            imgPostNome
+        );
 
-    console.log(params)
+        console.log(params)
 
-    const query = "INSERT INTO post(texto, img) VALUES(?,?)";
+        const query = "INSERT INTO post(texto, img) VALUES(?,?)";
 
         connection.query(query, params, (err, results) => {
             if(results) {
