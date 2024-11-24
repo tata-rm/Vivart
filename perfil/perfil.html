@@ -21,12 +21,6 @@
 
     <header>
         <img src="../imagens/logovivart.png" id="logo">
-        <img src="../imagens/barra.png" id="button_barra">
-
-        <div id="overlay_barra">
-            <button id="openOverlay">Adicionar postagem</button>
-            <button onclick="editPerfil()">Editar perfil</button>
-        </div>
 
     </header>
 
@@ -39,6 +33,13 @@
             <button id="enviarPost">Publicar</button>
     </div>
     <main>
+        <img src="../imagens/barra1.png" id="button_barra">
+
+        <div id="overlay_barra">
+            <button id="openOverlay">Adicionar postagem</button>
+            <button onclick="editPerfil()">Editar perfil</button>
+        </div>
+        <section id="main">
         <section id="postagens_perfil">
             <div id="post">
                 <p id="opcoes">Oportunizado</p>
@@ -74,6 +75,7 @@
                 <input type="file" id="mudar_img" style="display: none;" accept="image/*">
             </div>
         </section>
+    </section>
     </main>
     <script src="perfil.js"></script>
 </body>
