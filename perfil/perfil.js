@@ -58,7 +58,9 @@ enviarPost.onclick = async function(event) {
 
     let camposPost = document.getElementById('camposPost');
     let dadosPost = new FormData(camposPost);
-    let textPost = document.getElementById("inputOverlay");
+    let textPost = document.getElementById("textPost");
+
+    dadosPost.append('textPost', textPost);
 
     try {
         const response = await fetch('http://localhost:3005/api/store/post', {
