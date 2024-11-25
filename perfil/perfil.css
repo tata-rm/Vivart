@@ -136,6 +136,10 @@ main{
     display: flex;
     flex-direction: column;
     background-color: var(--cinza);
+
+    button{
+        width: 100%;
+    }
 }
 #camposPost input{
     border: 1.2px solid var(--lilas);

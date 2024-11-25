@@ -53,22 +53,30 @@ fecharOverlay.addEventListener("click", function(event){
 /*---------------------------------------------------*/
 let enviarPost = document.getElementById('enviarPost');
 
-enviarPost.onclick = async function addPost() {
+enviarPost.onclick = async function(event) {
+    event.preventDefault();
+
     let camposPost = document.getElementById('camposPost');
-    let dadosPost = new formData('camposPost')
+    let dadosPost = new FormData(camposPost);
+    let textPost = document.getElementById("inputOverlay");
 
-    const response = await fetch('http://localhost:3005/api/store/post', {
-        method: 'POST',
-        body: dadosPost
-    });
-  
+    try {
+        const response = await fetch('http://localhost:3005/api/store/post', {
+            method: 'POST',
+            body: dadosPost
+        });
+        console.log(dadosPost, camposPost)
 
-    let content = await response.json();
+        let content = await response.json();
 
-    if(content.success) {
-        window.location.href = "login.html"
-    } else {
-        alert("Não");
+        if (content.success) {
+            alert(content.message)
+        } else {
+            alert("Erro ao publicar.");
+        }
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+        alert("Houve um problema ao processar a publicação.");
     }
 };
       //if (response.ok) {

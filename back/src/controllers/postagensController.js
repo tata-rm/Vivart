@@ -36,8 +36,6 @@ console.log('aqui');
             imgPostNome
         );
 
-        console.log(params)
-
         const query = "INSERT INTO post(texto, img) VALUES(?,?)";
 
         connection.query(query, params, (err, results) => {

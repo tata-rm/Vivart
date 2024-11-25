@@ -15,7 +15,6 @@ create table cadastro_oportunizado(
     fotoPerfil varchar(255)
 );
 select * from cadastro_oportunizado;
-drop table cadastro_oportunizado;
 
 create table cadastro_oportuniza(
     area varchar(255),
@@ -29,7 +28,6 @@ create table cadastro_oportuniza(
     documento1 varchar(255)
 );
 select * from cadastro_oportuniza;
-drop table cadastro_oportuniza;
 
 create table post(
 	id int primary key auto_increment,
@@ -44,7 +42,6 @@ create table post(
     foreign key (cpf_cadastro_oportunizado) references cadastro_oportunizado(cpf)
 );
 select * from post;
-drop table post;
 
 create table livros(
 	id int auto_increment primary key not null,
