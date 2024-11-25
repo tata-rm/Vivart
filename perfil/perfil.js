@@ -56,36 +56,28 @@ let enviarPost = document.getElementById('enviarPost');
 enviarPost.onclick = async function(event) {
     event.preventDefault();
 
-    const storedAccount = localStorage.getItem('@account_logged');
-  
-    if (storedAccount) {
-        const account = JSON.parse(storedAccount);
-        document.querySelector("#profile-pic").setAttribute("src", `../src/uploads/${account.profile_pic}`)
-        document.querySelector("#input-name").value = account.name;
-        document.querySelector("#input-date").value = account.cpf;
-    } else {
-        console.error('Nenhuma conta está logada.');
-    }
+    const storedAccount = localStorage.getItem('usuario');
+    const account = JSON.parse(storedAccount);
+    console.log(account);  
 
     let camposPost = document.getElementById('camposPost');
     let dadosPost = new FormData(camposPost);
-    let textPost = document.getElementById("textPost");
-    let nomePost = account.name;
+    let nomePost = account.nome;
     let cpfPost = account.cpf;
-    let perfilPost = account.profile_pic;
+    //let perfilPost = account.profile_pic;
 
-    dadosPost.append('textPost', textPost);
     dadosPost.append('nomePost', nomePost);
     dadosPost.append('cpfPost', cpfPost);
-    dadosPost.append('perfilPost', perfilPost);
+    //dadosPost.append('perfilPost', perfilPost);
 
+    console.log(dadosPost);
 
     try {
         const response = await fetch('http://localhost:3005/api/store/post', {
             method: 'POST',
             body: dadosPost
         });
-        console.log(dadosPost, camposPost)
+        console.log(dadosPost)
 
         let content = await response.json();
 
@@ -175,7 +167,7 @@ async function getPerfil(event) {
 
         let nome = 
         `<div id="info">
-                <p>${result.data.nome}</p>
+                <p id="nome">${result.data.nome}</p>
                 <p>${result.data.email}</p>
                 <p>${result.data.area}</p>
                 <p>${result.data.texto}</p>

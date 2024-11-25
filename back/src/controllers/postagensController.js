@@ -33,10 +33,12 @@ console.log('aqui');
 
         const params = Array(
             request.body.textPost,
-            imgPostNome
+            imgPostNome,
+            request.body.nomePost,
+            request.body.cpfPost
         );
 
-        const query = "INSERT INTO post(texto, img) VALUES(?,?)";
+        const query = "INSERT INTO post(texto, img, nome, cpf) VALUES(?,?,?,?)";
 
         connection.query(query, params, (err, results) => {
             if(results) {
