@@ -144,6 +144,9 @@ header input{
     margin-left: 30%;
     background-color: var(--cinza);
     margin-top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #post{

@@ -61,11 +61,11 @@ enviarPost.onclick = async function(event) {
     console.log(account);  
 
     let camposPost = document.getElementById('camposPost');
-    let dadosPost = new FormData(camposPost);
+    let dadosPost = new FormData();
     let nomePost = account.nome;
     let cpfPost = account.cpf;
     //let perfilPost = account.profile_pic;
-
+    dadosPost.append('camposPost', camposPost)
     dadosPost.append('nomePost', nomePost);
     dadosPost.append('cpfPost', cpfPost);
     //dadosPost.append('perfilPost', perfilPost);
