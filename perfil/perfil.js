@@ -61,16 +61,17 @@ enviarPost.onclick = async function(event) {
     console.log(account);  
 
     let camposPost = document.getElementById('camposPost');
-    let dadosPost = new FormData();
+    let dadosPost = new FormData(camposPost);
     let nomePost = account.nome;
     let cpfPost = account.cpf;
-    //let perfilPost = account.profile_pic;
+    let perfilPost = account.fotoPerfil;
+    console.log(nomePost)
+    console.log(cpfPost)
+    
     dadosPost.append('camposPost', camposPost)
     dadosPost.append('nomePost', nomePost);
     dadosPost.append('cpfPost', cpfPost);
-    //dadosPost.append('perfilPost', perfilPost);
-
-    console.log(dadosPost);
+    dadosPost.append('perfilPost', perfilPost);
 
     try {
         const response = await fetch('http://localhost:3005/api/store/post', {
@@ -92,6 +93,47 @@ enviarPost.onclick = async function(event) {
     }
 };
   
+/*---------------------------------------------------*/
+
+async function getPost(event) {
+
+    let idPost = localStorage.getItem('cpfUser');
+
+    let data = {idPost}
+
+    const response = await fetch(`http://localhost:3005/api/get/post/${idPost}`, {
+        method: "GET"
+    });
+
+    const result = await response.json();
+    console.log(result)
+
+    if(result.success) {
+        let html = document.getElementById("postagens_perfil");
+
+        if(result.data.fotoPerfil) {
+            let url = "http://localhost:3005/images/";
+            document.getElementById('imgPerfil').src = url + result.data.fotoPerfil
+        }
+
+        let post = 
+        `<div id="post">
+            <div id="nomeImg">
+                <img id="imgPerfil"> </img>
+                <p id="nome">${result.data.nome}</p>
+            </div>
+            <p>${result.data.texto}</p>
+            <img id="conteudo"> </img>
+        </div>`;
+
+        html.innerHTML += post;
+    
+    } else {
+        alert(result.message)
+    }
+}
+window.onload = getPost();
+
 /*---------------------------------------------------*/
 
 const imgPerfil = document.getElementById('img_perfil');
@@ -161,7 +203,7 @@ async function getPerfil(event) {
         let html = document.getElementById("info_perfil");
 
         if(result.data.fotoPerfil) {
-            let url = "http://localhost:3003/images/";
+            let url = "http://localhost:3005/images/";
             document.getElementById('img_perfil').src = url + result.data.fotoPerfil
         }
 

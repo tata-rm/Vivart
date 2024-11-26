@@ -10,7 +10,8 @@ if(!fs.existsSync(uploadPost)) {
 }
 
 async function storePost(request, response) {
-console.log('aqui');
+console.log(request.files);
+
     if(!request.files) {
         return response.status(400).json({
             success: false,
@@ -20,6 +21,8 @@ console.log('aqui');
 
     const imgPost = request.files.imgPost;
     const imgPostNome = Date.now() + path.extname(imgPost.name);
+
+    console.log(request)
 
     imgPost.mv(path.join(uploadPost, imgPostNome), (erro) => {
 
@@ -35,10 +38,13 @@ console.log('aqui');
             request.body.textPost,
             imgPostNome,
             request.body.nomePost,
-            request.body.cpfPost
+            request.body.cpfPost,
+            request.body.perfilPost
         );
 
-        const query = "INSERT INTO post(texto, img, nome, cpf_cadastro_oportunizado) VALUES(?,?,?,?)";
+        console.log(params)
+
+        const query = "INSERT INTO post(texto, img, nome, cpf_cadastro_oportunizado, fotoPerfil) VALUES(?,?,?,?,?)";
 
         connection.query(query, params, (err, results) => {
             if(results) {
@@ -57,25 +63,37 @@ console.log('aqui');
         });
     });
 }
-        
-/*Função para retornar todas as postagens:
-async function retornaPost(req, res) {
-    connection.query('SELECT * FROM posts', (err, results) => {
-        if (err) {
-            console.error('Erro ao executar a consulta:', err);
-            res.status(500).json({ error: 'Erro interno do servidor' });
-            return;
+
+/*-----------------------------------------------*/
+
+async function getPost(request, response) {
+
+    let idPost = Array(
+        request.params.cpf
+    );
+
+    const query = "SELECT * FROM post WHERE cpf = ?";
+
+    connection.query(query, idPost, (err, result) => {
+        if(result) {
+            console.log(result)
+            response.status(200).json({
+                success: true,
+                message: "Sucesso!",
+                data: result[0]
+            })
+        } else {
+            response.status(400).json({
+                success: false,
+                message: "Senha incorreta!",
+                data: err
+            })
         }
-        res.status(200).json({
-            success: true,
-            message: "Sucesso!",
-            data: results
-        });
-    });
-}*/
+    })
+}
 
 
 module.exports = {
     storePost,
-    //retornaPost
+    getPost
 };
