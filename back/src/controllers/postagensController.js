@@ -38,7 +38,7 @@ console.log('aqui');
             request.body.cpfPost
         );
 
-        const query = "INSERT INTO post(texto, img, nome, cpf) VALUES(?,?,?,?)";
+        const query = "INSERT INTO post(texto, img, nome, cpf_cadastro_oportunizado) VALUES(?,?,?,?)";
 
         connection.query(query, params, (err, results) => {
             if(results) {
@@ -49,7 +49,7 @@ console.log('aqui');
                 })
             } else {
                 response.status(400).json({
-                    sucess: false,
+                    success: false,
                     message: "Sem sucesso!",
                     sql: err
                 })
