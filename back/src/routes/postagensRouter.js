@@ -38,6 +38,6 @@ router.post('/store/post', storePost);
  *                type: object
 *
 */
-router.get('/get/post', getPost);
+router.get('/get/post/:idPost', getPost);
 
 module.exports = router;

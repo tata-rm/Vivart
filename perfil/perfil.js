@@ -58,15 +58,15 @@ enviarPost.onclick = async function(event) {
 
     const storedAccount = localStorage.getItem('usuario');
     const account = JSON.parse(storedAccount);
-    console.log(account);  
+    //console.log(account);  
 
     let camposPost = document.getElementById('camposPost');
     let dadosPost = new FormData(camposPost);
     let nomePost = account.nome;
     let cpfPost = account.cpf;
     let perfilPost = account.fotoPerfil;
-    console.log(nomePost)
-    console.log(cpfPost)
+    //console.log(nomePost)
+    //console.log(cpfPost)
     
     dadosPost.append('camposPost', camposPost)
     dadosPost.append('nomePost', nomePost);
@@ -78,7 +78,7 @@ enviarPost.onclick = async function(event) {
             method: 'POST',
             body: dadosPost
         });
-        console.log(dadosPost)
+        //console.log(dadosPost)
 
         let content = await response.json();
 
@@ -111,22 +111,26 @@ async function getPost(event) {
     if(result.success) {
         let html = document.getElementById("postagens_perfil");
 
-        if(result.data.fotoPerfil) {
-            let url = "http://localhost:3005/images/";
-            document.getElementById('imgPerfil').src = url + result.data.fotoPerfil
+        if(result.data.img) {
+            let url = "http://localhost:3005/image/";
+            document.getElementById('conteudo').src = url + result.data.img
         }
-
-        let post = 
-        `<div id="post">
-            <div id="nomeImg">
-                <img id="imgPerfil"> </img>
-                <p id="nome">${result.data.nome}</p>
-            </div>
-            <p>${result.data.texto}</p>
-            <img id="conteudo"> </img>
-        </div>`;
-
-        html.innerHTML += post;
+        
+        result.data.forEach(dado => {
+            
+            let post = 
+            `<div id="post">
+                <p id="opcoes">Oportunizado</p>
+                <div id="nomeImg">
+                    <img id="imgPerfil" src="http://localhost:3005/images/${dado.fotoPerfil}"> </img>
+                    <p id="nome">${dado.nome}</p>
+                </div>
+                <p id="texto">${dado.texto}</p>
+                <img id="conteudo" src="http://localhost:3005/images/${dado.img}"> </img>
+            </div>`;
+    
+            html.innerHTML += post;
+        });
     
     } else {
         alert(result.message)
@@ -147,7 +151,7 @@ function abrirFile() {
 
 mudar_img.addEventListener('change', function() {
     const file = this.files[0];
-    console.log(file)
+    //console.log(file)
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -197,7 +201,7 @@ async function getPerfil(event) {
     });
 
     const result = await response.json();
-    console.log(result)
+    //console.log(result)
 
     if(result.success) {
         let html = document.getElementById("info_perfil");

@@ -69,10 +69,11 @@ console.log(request.files);
 async function getPost(request, response) {
 
     let idPost = Array(
-        request.params.cpf
+        request.params.idPost
     );
+    console.log(idPost)
 
-    const query = "SELECT * FROM post WHERE cpf = ?";
+    const query = "SELECT * FROM post WHERE cpf_cadastro_oportunizado = ?";
 
     connection.query(query, idPost, (err, result) => {
         if(result) {
@@ -80,7 +81,7 @@ async function getPost(request, response) {
             response.status(200).json({
                 success: true,
                 message: "Sucesso!",
-                data: result[0]
+                data: result
             })
         } else {
             response.status(400).json({
