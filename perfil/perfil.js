@@ -117,7 +117,7 @@ async function getPost(event) {
         }
         
         result.data.forEach(dado => {
-            
+            console.log(dado.img)
             let post = 
             `<div id="post">
                 <p id="opcoes">Oportunizado</p>
@@ -126,7 +126,7 @@ async function getPost(event) {
                     <p id="nome">${dado.nome}</p>
                 </div>
                 <p id="texto">${dado.texto}</p>
-                <img id="conteudo" src="http://localhost:3005/images/${dado.img}"> </img>
+                <img id="conteudo" src="http://localhost:3005/post/${dado.img}"> </img>
             </div>`;
     
             html.innerHTML += post;
