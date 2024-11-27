@@ -1,6 +1,5 @@
 const connection = require('../config/db');
 
-
 async function loginOportunizado(request, response) {
     const cpf = Array(request.body.cpf);
 

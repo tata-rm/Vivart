@@ -62,6 +62,61 @@ async function atualizarImgPerfil(request, response) {
     });
 }
 
+async function atualizarImgPerfilOportuniza(request, response) {
+    console.log(request.files)
+    const cnpj = request.body.cnpjUser; 
+    const fotoPerfil = request.files;
+
+    if (!fotoPerfil) {
+        return response.status(400).json({
+            success: false,
+            message: 'Nenhuma foto foi enviada.'
+        });
+    }
+
+    const foto = request.files.fotoPerfil;
+    console.log(foto)
+    console.log(foto.name)
+    const fotoNome = Date.now() + path.extname(foto.name);
+
+
+    foto.mv(path.join(uploadPath,fotoNome), (erro) => {
+        
+        if(erro) {
+            console.log("err?", erro)
+            return response.status(400).json({
+                success: false,
+                message: "Erro ao mover o arquivo"
+            });
+        }
+
+        const params = Array(
+            fotoNome,
+            cpf
+        );
+        
+        const query = "UPDATE cadastro_oportuniza SET fotoPerfil = ? WHERE cnpj = ?"
+        
+        connection.query(query, params, (err, results) => {
+            console.log(err)
+            if (results) {
+                response.status(200).json({
+                    success: true,
+                    message: 'Sucesso',
+                    data: results
+                })
+            } else {
+                response.status(400).json({
+                    success: false,
+                    message: "Sem sucesso!",
+                    data: err
+                })
+            }
+        });
+    });
+}
+
 module.exports = { 
-    atualizarImgPerfil 
+    atualizarImgPerfil,
+    atualizarImgPerfilOportuniza
 }

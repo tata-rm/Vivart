@@ -62,7 +62,9 @@ button_oportuniza.onclick = async function(event) {
     const result = await response.json();
 
     if(result.success) {
-        window.location.href = "../perfil/perfil.html"
+        localStorage.setItem('cnpjUser', result.data.cpf)
+        localStorage.setItem('usuarioOportuniza', JSON.stringify(result.data))
+        window.location.href = "../perfil/perfilOportuniza.html"
     } else {
         alert(result.message)
     }

@@ -33,9 +33,14 @@ async function loginOportuniza(request, response) {
 }
 
 async function getOportuniza(request, response) {
+
+    let cnpj = Array(
+        request.params.cnpj
+    );
+    
     const query = "SELECT * FROM cadastro_oportuniza";
 
-    connection.query(query, (err, result) => {
+    connection.query(query, cnpj, (err, result) => {
         if(result) {
             response.status(200).json({
                 success: true,
