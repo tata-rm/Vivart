@@ -40,7 +40,7 @@ async function getAllPost(event) {
                 <p></p>
                 <div id="nomeImg">
                     <img id="imgPerfil" src="http://localhost:3005/images/${dado.fotoPerfil}"> </img>
-                    <p id="nome">${dado.nome}</p>
+                    <a id="nome" href="./perfil/perfilUsuario.html">${dado.nome}</a>
                 </div>
                 <p id="texto">${dado.texto}</p>
                 <img id="conteudo" src="http://localhost:3005/post/${dado.img}"> </img>
@@ -54,3 +54,5 @@ async function getAllPost(event) {
     }
 }
 window.onload = getAllPost();
+
+
