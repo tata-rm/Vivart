@@ -53,108 +53,6 @@ main{
     display: flex;
     flex-direction: column;
 }
-#button_barra{
-    margin: 20vh 33% 0 62%;
-    padding: 0;
-    display: flex;
-    border: 0;
-    cursor: pointer;
-    width: 5%;
-    z-index: 0;
-    position: fixed;
-}
-
-#overlay_barra{
-    width: 13%;
-    height: 230px;
-    background-color: var(--lilas);
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    margin-top: 20vh;
-    padding: 0%;
-    right: 33%;
-    border-radius: 10px;
-}
-#overlay_barra button{
-    display: flex;
-    background-color: var(--lilas);
-    color: var(--cinza);
-    font-family: "Grenze", serif;
-    font-size: 23px;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    border: none;
-}
-
-#overlay_barra button:hover{
-    text-shadow: var(--lilas-escuro) -3px 8px 15px;
-}
-
-.hidden{
-    display: none;
-}
-
-.postOverlay {
-    position: fixed;
-    width: 65%;
-    height: 70%;
-    background-color: var(--cinza);
-    justify-content: space-around;
-    align-items: center;
-    display: none;
-    z-index: 1000;
-    flex-direction: column;
-    border-radius: 0px 30px 30px 30px;
-    border: 1.2px solid var(--lilas);
-    box-shadow: var(--lilas) 8px 5px 10px;
-}
-.postOverlay button{
-    width: 8%;
-    height: 25px;
-    font-family: "Grenze", sans-serif;
-    color: var(--lilas);
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    background-color: var(--cinza);
-    border: 1px solid var(--lilas);
-    cursor: pointer;
-    box-shadow: var(--lilas) 1px 1px 5px;
-}
-
-.postOverlay button:hover{
-    box-shadow: var(--lilas) 3px 3px 5px;
-}
-
-#camposPost{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--cinza);
-}
-#camposPost input{
-    border: 1.2px solid var(--lilas);
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    outline: none;
-    font-family: "Grenze", sans-serif;
-    color: var(--lilas);
-    font-size: 20px;
-    background-color: var(--cinza);
-    box-shadow: var(--lilas-claro) 3px 3px 5px;
-
-}
-
-#camposPost input:hover{
-    box-shadow: var(--lilas) 3px 3px 5px;
-}
 
 #overlay{
     width: 18%;
@@ -168,7 +66,6 @@ main{
     position: fixed;
     margin: 0%;
     padding: 0%;
-    
 }
 
 .logo-overlay{
@@ -233,11 +130,6 @@ header input{
     font-size: 20px;
 }
 
-#i{
-    width: 100%;
-    height: 120%;
-}
-
 #main{
     display: flex;
     flex-direction: row;
@@ -246,16 +138,16 @@ header input{
     z-index: -1;
 }
 
-#info_perfil{
+#perfil{
     display: flex;
     width: 35%;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     height: 80%;
     margin-left: 65%;
     margin-top: 20vh;
-    overflow-y: auto;
 }
 
 #info{

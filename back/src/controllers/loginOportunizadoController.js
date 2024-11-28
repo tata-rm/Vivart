@@ -33,30 +33,27 @@ async function loginOportunizado(request, response) {
 }
 
 async function getOportunizado(request, response) {
-
-    let cpf = Array(
-        request.params.cpf
-    );
+    const cpf = Array(request.params.cpf);
 
     const query = "SELECT * FROM cadastro_oportunizado WHERE cpf = ?";
 
     connection.query(query, cpf, (err, result) => {
-        if(result) {
-            console.log(result)
+        if (result && result.length > 0) {
             response.status(200).json({
                 success: true,
                 message: "Sucesso!",
                 data: result[0]
-            })
+            });
         } else {
             response.status(400).json({
                 success: false,
-                message: "Senha incorreta!",
+                message: "Usuário não encontrado!",
                 data: err
-            })
+            });
         }
-    })
+    });
 }
+
 
 module.exports = {
     loginOportunizado,

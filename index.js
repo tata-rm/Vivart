@@ -32,22 +32,24 @@ async function getAllPost(event) {
             let url = "http://localhost:3005/image/";
             document.getElementById('conteudo').src = url + result.data.img
         }
+
+        console.log(result.data);
         
         result.data.forEach(dado => {
-            console.log(dado.img)
+            console.log(dado.img, dado.cpf_cadastro_oportunizado);
             let post = 
             `<div id="post">
                 <p></p>
                 <div id="nomeImg">
                     <img id="imgPerfil" src="http://localhost:3005/images/${dado.fotoPerfil}"> </img>
-                    <a id="nome" href="./perfil/perfilUsuario.html">${dado.nome}</a>
+                    <a id="nome" href="./perfilUsuario.html?cpf=${dado.cpf_cadastro_oportunizado}">${dado.nome}</a>
                 </div>
                 <p id="texto">${dado.texto}</p>
                 <img id="conteudo" src="http://localhost:3005/post/${dado.img}"> </img>
             </div>`;
-    
+        
             html.innerHTML += post;
-        });
+        });        
     
     } else {
         alert(result.message)
