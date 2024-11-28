@@ -57,7 +57,7 @@ header{
     width: 18%;
     height: 100%;
     background-color: var(--lilas);
-    z-index: -1;
+    z-index: -2;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -95,7 +95,7 @@ header{
 #mapeia{
     color: var(--mapeia);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
 }
@@ -103,7 +103,7 @@ header{
 #no-brasil{
     color: var(--no-brasil);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
     cursor: pointer;
@@ -112,7 +112,7 @@ header{
 #leituras{
     color: var(--leituras);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
     cursor: pointer;
@@ -133,16 +133,17 @@ header input{
 
 #esquerda{
     width: 30%;
+    background-color: var(--cinza);
 }
 
 #direita{
     width: 30%;
+    background-color: var(--cinza);
 }
 
 #meio{
     width: 40%;
     margin-left: 30%;
-    background-color: var(--cinza);
     margin-top: 0;
     display: flex;
     justify-content: center;

@@ -94,7 +94,7 @@ header{
 #mapeia{
     color: var(--mapeia);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
 }
@@ -102,7 +102,7 @@ header{
 #no-brasil{
     color: var(--no-brasil);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
     cursor: pointer;
@@ -111,7 +111,7 @@ header{
 #leituras{
     color: var(--leituras);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
     cursor: pointer;

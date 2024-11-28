@@ -95,7 +95,7 @@ header{
 #mapeia{
     color: var(--mapeia);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
 }
@@ -103,7 +103,7 @@ header{
 #no-brasil{
     color: var(--no-brasil);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
     cursor: pointer;
@@ -112,7 +112,7 @@ header{
 #leituras{
     color: var(--leituras);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
     cursor: pointer;
@@ -165,13 +165,12 @@ header input{
     background-color: var(--cinza);
     display: block;
     align-items: center;
-    margin: 10px;
     justify-content: space-around;
     font-family: 'Grenze';
     width: 60%;
     padding: 0px;
     justify-content: center;
-    margin-left: 20%;
+    margin: 0 20% 0 20%;
 }
 
 .book{
@@ -196,11 +195,11 @@ header input{
     font-size: 30px;
     color: var(--leituras);
     width: 100%;
-    margin-left: 10%;
     text-shadow: var(--lilas) 8px 0 10px;
     -webkit-text-stroke: 0.1px var(--lilas);  
     margin-left: 6%;
     align-items: baseline;
+    height: 10vh;
 }
 
 main{
@@ -213,7 +212,7 @@ main{
 
 @media screen and (max-width: 1400px) {
     .titulo-paginas{
-        height: 40vh;
+        height: 20vh;
     }
 
     #overlay a{

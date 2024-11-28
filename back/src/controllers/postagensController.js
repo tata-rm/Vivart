@@ -93,8 +93,32 @@ async function getPost(request, response) {
     })
 }
 
+/*-----------------------------------------------*/
+
+async function getAllPost(request, response) {
+
+    const query = "SELECT * FROM post";
+
+    connection.query(query, (err, result) => {
+        if(result) {
+            console.log(result)
+            response.status(200).json({
+                success: true,
+                message: "Sucesso!",
+                data: result
+            })
+        } else {
+            response.status(400).json({
+                success: false,
+                message: "Senha incorreta!",
+                data: err
+            })
+        }
+    })
+}
 
 module.exports = {
     storePost,
-    getPost
+    getPost,
+    getAllPost
 };

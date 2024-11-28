@@ -136,10 +136,6 @@ main{
     display: flex;
     flex-direction: column;
     background-color: var(--cinza);
-
-    button{
-        width: 100%;
-    }
 }
 #camposPost input{
     border: 1.2px solid var(--lilas);
@@ -201,7 +197,7 @@ main{
 #mapeia{
     color: var(--mapeia);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
 }
@@ -209,7 +205,7 @@ main{
 #no-brasil{
     color: var(--no-brasil);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
     cursor: pointer;
@@ -218,7 +214,7 @@ main{
 #leituras{
     color: var(--leituras);
     font-family: "Berkshire Swash", sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     background-color: var(--lilas);
     text-shadow: var(--lilas-escuro) -3px 10px 8px;
     cursor: pointer;
