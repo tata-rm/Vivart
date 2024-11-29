@@ -113,7 +113,7 @@ main{
     box-shadow: var(--lilas) 8px 5px 10px;
 }
 .postOverlay button{
-    width: 8%;
+    width: 25%;
     height: 25px;
     font-family: "Grenze", sans-serif;
     color: var(--lilas);
@@ -126,6 +126,10 @@ main{
     border: 1px solid var(--lilas);
     cursor: pointer;
     box-shadow: var(--lilas) 1px 1px 5px;
+}
+
+#enviarPost{
+    margin-left: 35%;
 }
 
 .postOverlay button:hover{

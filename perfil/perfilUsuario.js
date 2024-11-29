@@ -33,84 +33,32 @@ fecharOverlay.addEventListener("click", function(event){
   
 /*---------------------------------------------------*/
 
-async function getPost(event) {
+document.addEventListener("DOMContentLoaded", async function() {
+    // Garantir que a URL tenha o parâmetro CPF
+    const cpf = getQueryParam("cpf");
 
-    let idPost = localStorage.getItem('cpfUser');
-
-    let data = {idPost}
-
-    const response = await fetch(`http://localhost:3005/api/get/post/${idPost}`, {
-        method: "GET"
-    });
-
-    const result = await response.json();
-    console.log(result)
-
-    if(result.success) {
-        let html = document.getElementById("postagens_perfil");
-
-        if(result.data.img) {
-            let url = "http://localhost:3005/image/";
-            document.getElementById('conteudo').src = url + result.data.img
-        }
-        
-        result.data.forEach(dado => {
-            console.log(dado.img)
-            let post = 
-            `<div id="post">
-                <p id="opcoes">Oportunizado</p>
-                <div id="nomeImg">
-                    <img id="imgPerfil" src="http://localhost:3005/images/${dado.fotoPerfil}"> </img>
-                    <p id="nome">${dado.nome}</p>
-                </div>
-                <p id="texto">${dado.texto}</p>
-                <img id="conteudo" src="http://localhost:3005/post/${dado.img}"> </img>
-            </div>`;
-    
-            html.innerHTML += post;
-        });
-    
-    } else {
-        alert(result.message)
+    if (!cpf) {
+        alert("CPF não encontrado na URL");
+        return;
     }
-}
-window.onload = getPost();
 
-/*---------------------------------------------------*/
-
-async function getPerfil(event) {
-
-    let cpf = localStorage.getItem('cpfUser');
-
-    let data = {cpf}
-
-    const response = await fetch(`http://localhost:3005/api/getOportunizado/${cpf}`, {
-        method: "GET"
-    });
-
+    const response = await fetch(`http://localhost:3005/api/getOportunizado/${cpf}`);
     const result = await response.json();
-    //console.log(result)
-
-    if(result.success) {
-        let html = document.getElementById("info_perfil");
-
-        if(result.data.fotoPerfil) {
-            let url = "http://localhost:3005/images/";
-            document.getElementById('img_perfil').src = url + result.data.fotoPerfil
-        }
-
-        let nome = 
-        `<div id="info">
-                <p id="nome">${result.data.nome}</p>
-                <p>${result.data.email}</p>
-                <p>${result.data.area}</p>
-                <p>${result.data.texto}</p>
-        </div>`;
-
-        html.innerHTML += nome;
-    
+    console.log(result.data);
+    if (result.success) {
+        // Preencher os campos com os dados do usuário
+        document.getElementById('nomeUsuario').textContent = result.data.nome;
+        document.getElementById('fotoPerfil').src = `http://localhost:3005/images/${result.data.fotoPerfil}`;
+        document.getElementById('cpfUsuario').textContent = `CPF: ${result.data.cpf}`;
+        document.getElementById('emailUsuario').textContent = `Email: ${result.data.email}`;
+        // Adicione outros campos conforme necessário
     } else {
-        alert(result.message)
+        alert(result.message);
     }
+});
+
+// Função para pegar o valor do parâmetro 'cpf' na URL
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
 }
-window.onload = getPerfil();

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu perfl</title>
-    <link rel="stylesheet" href="perfil.css">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="perfil/perfilUsuario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
@@ -12,32 +11,30 @@
 </head>
 <body>
     <div id="overlay" class="hidden">
-        <a href="../index.html"><img class="logo-overlay" src="../imagens/logovivart.png"></a>
-        <a> <img class="perfil" src="../imagens/perfil.png"></a>
-        <a id="mapeia" href="../mapeia/mapeia.html">Mapeia</a>
-        <a id="no-brasil" href="../No Brasil/NoBrasil.html">No Brasil</a>
-        <a id="leituras" href="../leituras/leituras.html">Leituras</a>
+        <a href="./index.html"><img class="logo-overlay" src="../imagens/logovivart.png"></a>
+        <a href="./cadastro/cadastro.html"> <img class="perfil" src="../imagens/perfil.png"></a>
+        <a id="mapeia" href="./mapeia/mapeia.html">Mapeia</a>
+        <a id="no-brasil" href="./No Brasil/NoBrasil.html">No Brasil</a>
+        <a id="leituras" href="./leituras/leituras.html">Leituras</a>
     </div>
 
     <header>
         <img src="../imagens/logovivart.png" id="logo">
-
+        <input type="text" placeholder="Pesquisar">
     </header>
-
-    </div>
     <main>
         <section id="main">
             <section id="postagens_perfil">
-                
             </section>
-            <section id="info_perfil">
-                <div>
-                    <img src="../imagens/fundo.png" id="img_perfil" onclick="abrirFile()">
-                    <input type="file" id="mudar_img" style="display: none;" accept="image/*">
-                </div>
-            </section>
+            <div id="perfil">
+                <img id="fotoPerfil" src="" alt="Foto de perfil">
+                <h2 id="nomeUsuario"></h2>
+                <p id="cpfUsuario"></p>
+                <p id="emailUsuario"></p>
+            </div>
         </section>
     </main>
+
     <script src="perfilUsuario.js"></script>
 </body>
 </html>

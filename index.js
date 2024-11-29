@@ -39,10 +39,10 @@ async function getAllPost(event) {
             console.log(dado.img, dado.cpf_cadastro_oportunizado);
             let post = 
             `<div id="post">
-                <p></p>
-                <div id="nomeImg">
+            <p id="opcoes">Oportunizado</p>
+            <div id="nomeImg">
                     <img id="imgPerfil" src="http://localhost:3005/images/${dado.fotoPerfil}"> </img>
-                    <a id="nome" href="./perfilUsuario.html?cpf=${dado.cpf_cadastro_oportunizado}">${dado.nome}</a>
+                    <a id="nome" href="perfil/perfilUsuario.html?cpf=${dado.cpf_cadastro_oportunizado}">${dado.nome}</a>
                 </div>
                 <p id="texto">${dado.texto}</p>
                 <img id="conteudo" src="http://localhost:3005/post/${dado.img}"> </img>
